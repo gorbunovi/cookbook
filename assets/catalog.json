@@ -1,0 +1,1398 @@
+{
+  "id": 106,
+  "parent_id": null,
+  "name": "Сборник рецептов local",
+  "photo": null,
+  "info": null,
+  "recipes": null,
+  "catalogs": [
+    {
+      "id": 1,
+      "parent_id": 106,
+      "name": "Холодные блюда",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": [
+        {
+          "id": 19,
+          "parent_id": 1,
+          "name": "Бутерброды",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 20,
+          "parent_id": 1,
+          "name": "Банкетные закуски",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 21,
+          "parent_id": 1,
+          "name": "Гастрономические товары и консервы(порциями)",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 22,
+          "parent_id": 1,
+          "name": "Салаты и винегреты",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 23,
+          "parent_id": 1,
+          "name": "Блюда из овощей и грибов",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 24,
+          "parent_id": 1,
+          "name": "Блюда из рыбы, рыбных гастрономических продуктов",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 25,
+          "parent_id": 1,
+          "name": "Блюда из мяса и мясных гастрономических продуктов",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "parent_id": 106,
+      "name": "Супы",
+      "photo": "assets/images/recipe/soups.png",
+      "info": null,
+      "recipes": null,
+      "catalogs": [
+        {
+          "id": 26,
+          "parent_id": 2,
+          "name": "Горячие супы",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 27,
+          "parent_id": 2,
+          "name": "Заправочные супы",
+          "photo": "assets/images/recipe/soup2.png",
+          "info": null,
+          "recipes": null,
+          "catalogs": [
+            {
+              "id": 34,
+              "parent_id": 27,
+              "name": "Борщи",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 35,
+              "parent_id": 27,
+              "name": "Борщи из полуфабрикатов",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 36,
+              "parent_id": 27,
+              "name": "Щи",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 37,
+              "parent_id": 27,
+              "name": "Рассольники",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 38,
+              "parent_id": 27,
+              "name": "Рассольники из полуфабрикатов",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 39,
+              "parent_id": 27,
+              "name": "Супы картофельные, с овощами, крупой, бобовыми и макаронными изделиями",
+              "photo": "assets/images/recipe/soup4.jpg",
+              "info": null,
+              "recipes": [
+                {
+                  "id": 219,
+                  "catalog_id": 39,
+                  "name": "Суп картофельный с крупой",
+                  "photo": null,
+                  "weightNetto": 0.0,
+                  "info": null,
+                  "ingridients": [
+                    {
+                      "id": 66,
+                      "recipe_id": 219,
+                      "name": "Картофель",
+                      "photo": null,
+                      "weight": 320.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 219,
+                      "name": "Крупа",
+                      "photo": null,
+                      "weight": 30.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 219,
+                      "name": "Морковь",
+                      "photo": null,
+                      "weight": 40.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 219,
+                      "name": "Петрушка корень",
+                      "photo": null,
+                      "weight": 10.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 219,
+                      "name": "Лук репчатый",
+                      "photo": null,
+                      "weight": 40.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 219,
+                      "name": "Бульон или вода",
+                      "photo": null,
+                      "weight": 750.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    }
+                  ],
+                  "cooking": []
+                },
+                {
+                  "id": 223,
+                  "catalog_id": 39,
+                  "name": "Суп картофельный с макаронными изделиями",
+                  "photo": null,
+                  "weightNetto": 0.0,
+                  "info": null,
+                  "ingridients": [
+                    {
+                      "id": 66,
+                      "recipe_id": 223,
+                      "name": "Картофель",
+                      "photo": null,
+                      "weight": 300.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 223,
+                      "name": "Лапша, вермишель",
+                      "photo": null,
+                      "weight": 30.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 223,
+                      "name": "Морковь",
+                      "photo": null,
+                      "weight": 40.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 223,
+                      "name": "Петрушка корень",
+                      "photo": null,
+                      "weight": 10.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 223,
+                      "name": "Лук репчатый",
+                      "photo": null,
+                      "weight": 20.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 223,
+                      "name": "Бульон или вода",
+                      "photo": null,
+                      "weight": 750.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 223,
+                      "name": "Масло растительное",
+                      "photo": null,
+                      "weight": 10.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    }
+                  ],
+                  "cooking": []
+                }
+              ],
+              "catalogs": null
+            },
+            {
+              "id": 40,
+              "parent_id": 27,
+              "name": "Супы с макаронными изделиями, домашней лапшой, крупой и бобовыми",
+              "photo": "assets/images/recipe/soup3.jpg",
+              "info": null,
+              "recipes": [
+                {
+                  "id": 245,
+                  "catalog_id": 40,
+                  "name": "Суп-харчо",
+                  "photo": [
+                    "assets/images/recipe/harcho.jpg"
+                  ],
+                  "weightNetto": 0.0,
+                  "info": "Если готовится на один раз, то 70г. риса, иниче 50г.",
+                  "ingridients": [
+                    {
+                      "id": 66,
+                      "recipe_id": 245,
+                      "name": "Крупа рисовая",
+                      "photo": null,
+                      "weight": 70.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 245,
+                      "name": "Лук репчатый",
+                      "photo": null,
+                      "weight": 80.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 245,
+                      "name": "Масло растительное",
+                      "photo": null,
+                      "weight": 40.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 223,
+                      "name": "томатное пюре",
+                      "photo": null,
+                      "weight": 30.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 245,
+                      "name": "Соус ткемали",
+                      "photo": null,
+                      "weight": 30.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 245,
+                      "name": "Чеснок",
+                      "photo": null,
+                      "weight": 8.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 245,
+                      "name": "Кинза",
+                      "photo": null,
+                      "weight": 20.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 245,
+                      "name": "Петрушка",
+                      "photo": null,
+                      "weight": 20.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 245,
+                      "name": "Уцхо-сунели",
+                      "photo": null,
+                      "weight": 2.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 245,
+                      "name": "Чабер",
+                      "photo": null,
+                      "weight": 2.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    },
+                    {
+                      "id": 66,
+                      "recipe_id": 245,
+                      "name": "Вода или бульон",
+                      "photo": null,
+                      "weight": 1000.0,
+                      "info": null,
+                      "weightExisting": 0.0
+                    }
+                  ],
+                  "cooking": []
+                }
+              ],
+              "catalogs": null
+            },
+            {
+              "id": 41,
+              "parent_id": 31,
+              "name": "Супы из полуфабрикатов",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            }
+          ]
+        },
+        {
+          "id": 28,
+          "parent_id": 2,
+          "name": "Солянки",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 29,
+          "parent_id": 2,
+          "name": "Супы Молочные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 30,
+          "parent_id": 2,
+          "name": "Супы пюре",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 31,
+          "parent_id": 2,
+          "name": "Супы прозрачные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": [
+            {
+              "id": 42,
+              "parent_id": 31,
+              "name": "Гарниры, пирожки, гренки к бульонам",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "parent_id": 2,
+          "name": "Холодные супы",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 33,
+          "parent_id": 2,
+          "name": "Сладкие супы",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "parent_id": 106,
+      "name": "Блюда из картофеля, овощей и грибов",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": [
+        {
+          "id": 43,
+          "parent_id": 3,
+          "name": "Картофель и овощи отварные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 44,
+          "parent_id": 3,
+          "name": "Картофель, овощи и грибы припущенные и тушеные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 45,
+          "parent_id": 3,
+          "name": "Картофель, овощи и грибы жареные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 46,
+          "parent_id": 3,
+          "name": "Картофель, овощи и грибы запеченные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "parent_id": 106,
+      "name": "Блюда из круп",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": [
+        {
+          "id": 47,
+          "parent_id": 4,
+          "name": "Каши",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": [
+            {
+              "id": 49,
+              "parent_id": 47,
+              "name": "Рассыпчатые каши",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 50,
+              "parent_id": 47,
+              "name": "Вязкие каши",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 51,
+              "parent_id": 47,
+              "name": "Жидкие каши",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            }
+          ]
+        },
+        {
+          "id": 48,
+          "parent_id": 4,
+          "name": "Изделия из каш",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": [
+            {
+              "id": 52,
+              "parent_id": 48,
+              "name": "Крупеники, запеканки и пудинги",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 53,
+              "parent_id": 48,
+              "name": "Котлеты и биточки",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "parent_id": 106,
+      "name": "Блюда из бобовых",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": null
+    },
+    {
+      "id": 6,
+      "parent_id": 106,
+      "name": "Блюда из макаронных изделий",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": null
+    },
+    {
+      "id": 7,
+      "parent_id": 106,
+      "name": "Блюда из яиц",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": null
+    },
+    {
+      "id": 8,
+      "parent_id": 106,
+      "name": "Блюда из творога",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": null
+    },
+    {
+      "id": 9,
+      "parent_id": 106,
+      "name": "Блюда из рыбы, морепродуктов и раков",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": [
+        {
+          "id": 54,
+          "parent_id": 9,
+          "name": "Рыба отварная",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 55,
+          "parent_id": 9,
+          "name": "Рыба припущенная",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 56,
+          "parent_id": 9,
+          "name": "Рыба тушеная",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 57,
+          "parent_id": 9,
+          "name": "Рыба жареная",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 58,
+          "parent_id": 9,
+          "name": "Рыба запеченная",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 59,
+          "parent_id": 9,
+          "name": "Блюда из котлетной массы",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 60,
+          "parent_id": 9,
+          "name": "Блюда из рыбных консервов",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 61,
+          "parent_id": 9,
+          "name": "Блюда из морепродуктов",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 62,
+          "parent_id": 9,
+          "name": "Блюда из раков",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "parent_id": 106,
+      "name": "Блюда из мяса и мясных продуктов",
+      "photo": "assets/images/recipe/myso2.png",
+      "info": null,
+      "recipes": null,
+      "catalogs": [
+        {
+          "id": 63,
+          "parent_id": 10,
+          "name": "Отварное мясо, субпродукты",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 64,
+          "parent_id": 10,
+          "name": "Жаренное мясо, субпродукты",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 65,
+          "parent_id": 10,
+          "name": "Тушеное мясо, субпродукты",
+          "photo": "assets/images/recipe/myso3.jpg",
+          "info": null,
+          "recipes": [
+            {
+              "id": 642,
+              "catalog_id": 65,
+              "name": "Плов",
+              "photo": [
+                "assets/images/recipe/plov.jpg",
+                "assets/images/recipe/plov2.jpg",
+                "assets/images/recipe/plov3.jpg"
+              ],
+              "weightNetto": 0.0,
+              "info": null,
+              "ingridients": [
+                {
+                  "id": 66,
+                  "recipe_id": 642,
+                  "name": "Рис",
+                  "photo": null,
+                  "weight": 500.0,
+                  "info": null,
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 642,
+                  "name": "Мясо",
+                  "photo": null,
+                  "weight": 700.0,
+                  "info": null,
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 642,
+                  "name": "Морковь",
+                  "photo": null,
+                  "weight": 500.0,
+                  "info": null,
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 642,
+                  "name": "Лук",
+                  "photo": null,
+                  "weight": 120.0,
+                  "info": null,
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 642,
+                  "name": "Масло растительное",
+                  "photo": null,
+                  "weight": 120.0,
+                  "info": "Курдюка - 150г.",
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 642,
+                  "name": "Зира",
+                  "photo": null,
+                  "weight": 10.0,
+                  "info": null,
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 642,
+                  "name": "Барбарис",
+                  "photo": null,
+                  "weight": 10.0,
+                  "info": null,
+                  "weightExisting": 0.0
+                }
+              ],
+              "cooking": []
+            }
+          ],
+          "catalogs": null
+        },
+        {
+          "id": 66,
+          "parent_id": 10,
+          "name": "Блюда из рубленого мяса",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 67,
+          "parent_id": 10,
+          "name": "Мясо запеченное",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 68,
+          "parent_id": 10,
+          "name": "Блюда из мясных и мясо-растительных консервов",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "parent_id": 106,
+      "name": "Блюда из сельскохозяйственной птицы, пернатой дичи и кролика",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": null
+    },
+    {
+      "id": 12,
+      "parent_id": 106,
+      "name": "Гарниры",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": [
+        {
+          "id": 69,
+          "parent_id": 12,
+          "name": "Гарниры для горячих блюд",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": [
+            {
+              "id": 71,
+              "parent_id": 69,
+              "name": "Гарниры из круп, бобовых и макаронных изделий",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 72,
+              "parent_id": 69,
+              "name": "Гарниры из картофеля и овощей",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 73,
+              "parent_id": 69,
+              "name": "Гарниры сложные",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            }
+          ]
+        },
+        {
+          "id": 70,
+          "parent_id": 12,
+          "name": "Гарниры для холодных блюд",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "parent_id": 106,
+      "name": "Соусы",
+      "photo": "assets/images/recipe/sous.jpg",
+      "info": null,
+      "recipes": null,
+      "catalogs": [
+        {
+          "id": 74,
+          "parent_id": 13,
+          "name": "Соусы мясные красные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 75,
+          "parent_id": 13,
+          "name": "Соусы белые на мясном бульоне",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 76,
+          "parent_id": 13,
+          "name": "Соусы на рыбном бульоне",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 77,
+          "parent_id": 13,
+          "name": "Соусы молочные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 78,
+          "parent_id": 13,
+          "name": "Соусы сметанные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 79,
+          "parent_id": 13,
+          "name": "Соусы гребные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 80,
+          "parent_id": 13,
+          "name": "Соусы яично-масляные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 81,
+          "parent_id": 13,
+          "name": "Смеси масляные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 82,
+          "parent_id": 13,
+          "name": "Соусы холодные",
+          "photo": "assets/images/recipe/sous2.jpg",
+          "info": null,
+          "recipes": [
+            {
+              "id": 898,
+              "catalog_id": 82,
+              "name": "Горчица столовая",
+              "photo": [
+                "assets/images/recipe/gor.jpg",
+                "assets/images/recipe/gor2.jpg"
+              ],
+              "weightNetto": 0.0,
+              "info": null,
+              "ingridients": [
+                {
+                  "id": 66,
+                  "recipe_id": 898,
+                  "name": "Горчица сухая (порошок)",
+                  "photo": null,
+                  "weight": 290.0,
+                  "info": null,
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 898,
+                  "name": "Вода",
+                  "photo": null,
+                  "weight": 490.0,
+                  "info": "температура воды 95 гр.",
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 898,
+                  "name": "Уксус 9%",
+                  "photo": null,
+                  "weight": 200.0,
+                  "info": null,
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 898,
+                  "name": "Сахар",
+                  "photo": null,
+                  "weight": 45.0,
+                  "info": null,
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 898,
+                  "name": "Масло растительное",
+                  "photo": null,
+                  "weight": 25.0,
+                  "info": null,
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 898,
+                  "name": "Соль",
+                  "photo": null,
+                  "weight": 35.0,
+                  "info": null,
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 898,
+                  "name": "Корица",
+                  "photo": null,
+                  "weight": 0.10,
+                  "info": null,
+                  "weightExisting": 0.0
+                },
+                {
+                  "id": 66,
+                  "recipe_id": 898,
+                  "name": "Гвоздика",
+                  "photo": null,
+                  "weight": 0.10,
+                  "info": null,
+                  "weightExisting": 0.0
+                }
+              ],
+              "cooking": [
+                "В горячую (95 градусов) воду добовляют сахар, соль и размешивают до полного растворения.",
+                "В воду добавляют уксус, размешивают.",
+                "В емкость просеивают горчицу порошок и выливают в нее раствор полученный ранее и растительное масло",
+                "Полученную смесь тщательно перемешать - расстереть.",
+                "Накрыть емкость крышкой или пленкой и оставить на 12 часов для созревания.",
+                "Хранить полученную горчицу в емкости с плотной крышкой, чтоб не выветрилась"
+              ]
+            }
+          ],
+          "catalogs": null
+        },
+        {
+          "id": 83,
+          "parent_id": 13,
+          "name": "Соусы сладкие",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "parent_id": 106,
+      "name": "Сладкие блюда",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": [
+        {
+          "id": 84,
+          "parent_id": 14,
+          "name": "Плоды и ягоды свежие и быстрозамороженные",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 85,
+          "parent_id": 14,
+          "name": "Компоты",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 86,
+          "parent_id": 14,
+          "name": "Кисели",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 87,
+          "parent_id": 14,
+          "name": "Желе, муссы, самбуки",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 88,
+          "parent_id": 14,
+          "name": "Кремы и взбитые сливки",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 89,
+          "parent_id": 14,
+          "name": "Суфле, пудинги, гренки и другие сладкие блюда",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 90,
+          "parent_id": 14,
+          "name": "Мороженное",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "parent_id": 106,
+      "name": "Напитки",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": [
+        {
+          "id": 91,
+          "parent_id": 15,
+          "name": "Чай",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 92,
+          "parent_id": 15,
+          "name": "Кофе",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 93,
+          "parent_id": 15,
+          "name": "Какао и шоколад",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 94,
+          "parent_id": 15,
+          "name": "Молоко, кисломолочные напитки",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 95,
+          "parent_id": 15,
+          "name": "Горячие напитки с вином",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 96,
+          "parent_id": 15,
+          "name": "Молочные и сливочные прохладительные напитки",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 97,
+          "parent_id": 15,
+          "name": "Плодово-ягодные прохладительные напитки",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 98,
+          "parent_id": 15,
+          "name": "Безалкогольные коктейли",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": [
+            {
+              "id": 100,
+              "parent_id": 98,
+              "name": "Коктейли сливочные",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 101,
+              "parent_id": 98,
+              "name": "Коктейли молочные",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 102,
+              "parent_id": 98,
+              "name": "Коктейли молочные с мороженым",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            },
+            {
+              "id": 103,
+              "parent_id": 98,
+              "name": "Коктейли десертные",
+              "photo": null,
+              "info": null,
+              "recipes": null,
+              "catalogs": null
+            }
+          ]
+        },
+        {
+          "id": 99,
+          "parent_id": 15,
+          "name": "Крюшоны",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "parent_id": 106,
+      "name": "Мучные изделия",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": [
+        {
+          "id": 104,
+          "parent_id": 16,
+          "name": "Мучные блюда",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        },
+        {
+          "id": 105,
+          "parent_id": 16,
+          "name": "Мучные кулинарные блюда",
+          "photo": null,
+          "info": null,
+          "recipes": null,
+          "catalogs": null
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "parent_id": 106,
+      "name": "Мучные гарниры",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": null
+    },
+    {
+      "id": 18,
+      "parent_id": 106,
+      "name": "Фарши",
+      "photo": null,
+      "info": null,
+      "recipes": null,
+      "catalogs": null
+    }
+  ]
+}

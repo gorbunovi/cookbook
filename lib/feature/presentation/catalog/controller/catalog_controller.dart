@@ -1,0 +1,70 @@
+import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
+import 'package:cookbook/feature/domain/entities/recipe_entity.dart';
+import 'package:cookbook/feature/routes/app_routes.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+
+import 'index.dart';
+
+class CatalogController extends Cubit<CatalogState> {
+  CatalogController() : super(const Initial());
+  CatalogEntity _catalog = CatalogEntity(id: 0, name: 'Кулинарная книга', photo: '', info: '');
+  int _index = 0;
+  List<CatalogEntity?> _catalogList = [];
+
+  Future<void> init() async{
+    final currentState = state;
+    emit(const Loading());
+    if(currentState is Loading) return;
+    _catalog = Get.arguments;
+    _catalogList.add(_catalog);
+    print('${_catalog.name}4 -- ${_catalog.toString()}');
+    emit(Catalog(catalog: _catalog, index: _index));
+
+  }
+
+  void tapBottomNavigationBar(int index){
+    _index = index;
+    emit(const Loading());
+    emit(Catalog(catalog: _catalog, index: index));
+  }
+
+
+
+  void toHome(){
+    emit(const Loading());
+    emit(Catalog(catalog: _catalog, index: _index));
+  }
+
+  void toBack(){
+    print('tapCatalog0 ${_catalogList.map((e) => e?.name)} ${_catalogList.length}');
+    if(_catalogList.length != 1 ){
+      _catalogList.removeLast();
+      CatalogEntity catalog = _catalogList.last as CatalogEntity;
+      print('tapCatalog1 ${_catalogList.map((e) => e?.name)}');
+      // _catalogList.removeLast();
+      print('tapCatalog2 ${_catalogList.map((e) => e?.name)}');
+      print('catalog -- ${catalog.name}');
+      emit(Loading());
+      emit(Catalog(catalog: catalog, index: _index));
+    }else {
+      _catalogList.clear();
+      Get.back();
+    }
+  }
+
+  void tapCatalog({required CatalogEntity catalog,}){
+    print('catalog -- $catalog');
+    _catalogList.add(catalog);
+    print('tapCatalog ${_catalogList.map((e) => e?.name)}');
+    if(catalog.recipes != null) print(catalog.recipes!.map((element) =>'pecipe -- ${element.toString()}'));
+    // print(_catalogList.map((e) => e.toString()));
+    emit(const Loading());
+    emit(Catalog(catalog: catalog, index: _index));
+  }
+
+  void tapRecipe({required RecipeEntity recipe,}){
+    Get.toNamed(Routes.RECIPE, arguments: recipe);
+  }
+
+}

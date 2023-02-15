@@ -1,0 +1,107 @@
+name: cookbook
+description: cookbook.
+
+
+publish_to: 'none'
+
+
+version: 0.0.1+1
+
+environment:
+  sdk: '>=2.18.6 <3.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Value equality
+  equatable: ^2.0.5
+  # bloc state managment
+  flutter_bloc: ^8.1.1
+  # Local DATA
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  cached_network_image: ^3.2.3
+  # code generators
+  # freezed
+  freezed_annotation: ^2.2.0
+  # servise locator
+  get_it: ^7.2.0
+  # GetX
+  get: ^4.6.5
+  # images
+  flutter_svg: ^1.1.6
+  flutter_svg_provider: ^1.0.3
+  # images carousel slider
+  carousel_slider: ^4.2.1
+  # network
+  http: ^0.13.5
+  internet_connection_checker: ^1.0.0+1
+  json_annotation: ^4.7.0
+  cupertino_icons: ^1.0.2
+  # sqflite
+  sqflite: ^2.2.4+1
+  path_provider: ^2.0.12
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # Functional programming thingies
+  dartz: ^0.10.1
+  # Hive
+  hive_generator: ^2.0.0
+  # freezed
+  freezed: ^2.3.0
+  json_serializable: ^6.5.4
+  # code generators
+  build_runner: ^2.3.2
+
+  flutter_lints: ^2.0.0
+
+
+
+flutter:
+
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/
+    - assets/images/
+    - assets/images/recipe/
+    - assets/images/background/
+    - assets/images/icons/
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/roboto/Roboto-Regular.ttf
+        - asset: assets/fonts/roboto/Roboto-Italic.ttf
+          style: italic
+        - asset: assets/fonts/roboto/Roboto-Bold.ttf
+          weight: 900
+
+
+
+
+  #     - family: Schyler
+  #       fonts:
+  #         - asset: fonts/Schyler-Regular.ttf
+  #         - asset: fonts/Schyler-Italic.ttf
+  #           style: italic
+  #     - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
