@@ -22,7 +22,7 @@ class IngridientModel extends IngridientEntity{
     photo: photo,
     weight: weight,
     weightExisting: weightExisting,
-    weightPortion: weightPortion,
+    // weightPortion: weightPortion,
   );
 
   IngridientHive toHive() {
@@ -31,7 +31,7 @@ class IngridientModel extends IngridientEntity{
       name: name,
       photo: photo,
       weight: weight,
-      weightPortion: weightPortion,
+      // weightPortion: weightPortion,
       weightExisting: weightExisting,
     );
   }
@@ -42,7 +42,7 @@ class IngridientModel extends IngridientEntity{
     name: ingridientHive.name,
     photo: ingridientHive.photo,
     weight: ingridientHive.weight,
-    weightPortion: ingridientHive.weightPortion,
+    // weightPortion: ingridientHive.weightPortion,
     weightExisting: ingridientHive.weightPortion,
   );
 

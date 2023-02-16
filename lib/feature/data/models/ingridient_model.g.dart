@@ -11,9 +11,9 @@ IngridientModel _$IngridientModelFromJson(Map<String, dynamic> json) =>
       id: json['id'],
       name: json['name'],
       photo: json['photo'],
-      weight: json['weight'],
-      weightExisting: json['weightExisting'],
-      weightPortion: json['weightPortion'],
+      weight: json['weight'] == null ? 0.0 : json['weight'].toDouble(),
+      weightExisting: json['weightExisting']== null ? 0.0 : json['weightExisting'].toDouble(),
+      weightPortion: json['weightPortion'] == null ? 0.0 : json['weightPortion'].toDouble(),
     );
 
 Map<String, dynamic> _$IngridientModelToJson(IngridientModel instance) =>
