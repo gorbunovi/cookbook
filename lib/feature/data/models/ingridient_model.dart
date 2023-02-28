@@ -3,7 +3,7 @@ import 'package:cookbook/feature/domain/entities/ingridient_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 
-part 'ingridient_model.g.dart';
+// part 'ingridient_model.g.dart';
 
 @JsonSerializable()
 class IngridientModel extends IngridientEntity{
@@ -22,7 +22,7 @@ class IngridientModel extends IngridientEntity{
     photo: photo,
     weight: weight,
     weightExisting: weightExisting,
-    // weightPortion: weightPortion,
+    weightPortion: weightPortion,
   );
 
   IngridientHive toHive() {
@@ -31,7 +31,7 @@ class IngridientModel extends IngridientEntity{
       name: name,
       photo: photo,
       weight: weight,
-      // weightPortion: weightPortion,
+      weightPortion: weightPortion,
       weightExisting: weightExisting,
     );
   }
@@ -42,12 +42,12 @@ class IngridientModel extends IngridientEntity{
     name: ingridientHive.name,
     photo: ingridientHive.photo,
     weight: ingridientHive.weight,
-    // weightPortion: ingridientHive.weightPortion,
+    weightPortion: ingridientHive.weightPortion,
     weightExisting: ingridientHive.weightPortion,
   );
 
   Map<String, dynamic> toMap(){
-    return {
+    return <String, dynamic>{
       'id' : id,
       'name' : name,
       'photo' : photo,
@@ -63,8 +63,22 @@ class IngridientModel extends IngridientEntity{
 
   );
 
-  factory IngridientModel.fromJson(Map<String, dynamic> json) => _$IngridientModelFromJson(json);
+  factory IngridientModel.fromJson(Map<String, dynamic> json) => IngridientModel(
+    id: json['id'],
+    name: json['name'],
+    photo: json['photo'],
+    weight: json['weight'] == null ? 0.0 : json['weight'].toDouble(),
+    weightExisting: json['weightExisting']== null ? 0.0 : json['weightExisting'].toDouble(),
+    weightPortion: json['weightPortion'] == null ? 0.0 : json['weightPortion'].toDouble(),
+  );
 
-  Map<String, dynamic> toJson() => _$IngridientModelToJson(this);
-
+  Map<String, dynamic> toJson() =>
+      <String, dynamic>{
+    'id': id,
+    'name': name,
+    'photo': photo,
+    'weight': weight,
+    'weightPortion': weightPortion,
+    'weightExisting': weightExisting,
+  };
 }

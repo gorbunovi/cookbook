@@ -1,7 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
 import 'package:cookbook/feature/domain/entities/recipe_entity.dart';
 import 'package:flutter/material.dart';
+import 'package:cookbook/core/core.dart' as core_widgets;
 
 class CardCatalogWidget extends StatelessWidget {
   const CardCatalogWidget({
@@ -21,20 +21,11 @@ class CardCatalogWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double _sizePhoto = MediaQuery.of(context).size.height*0.14;
-    // print('catalog -${catalog!.name} ${catalog}');
-    // print('recipe -${recipe.name} ${recipe}');
-    // print('catalogList - ${catalogList?.name??'null'}');
     return GestureDetector(
       onTap: () {
         if (catalog?.recipes != null) {
           print('recipe - ${recipe}');
-          // Navigator.of(context).push(
-          //   MaterialPageRoute(builder: (context)=> RecipePage(recipe: recipe),)
-          // );
         } else if (catalog?.catalogs != null) {
-          // Navigator.of(context).push(
-          //     MaterialPageRoute(builder: (context)=> CatalogPage(catalog: catalog),)
-          // );
         } else {
           print('ERROR');
         }
@@ -74,17 +65,17 @@ class CardCatalogWidget extends StatelessWidget {
                         children: [
                           const SizedBox(height: 10),
                           catalog?.photo != null ?
+                          catalog?.id == 29?
                           Container(
-                            margin: const EdgeInsets.only(left: 10, right: 10),
+                              margin: const EdgeInsets.only(left: 10, right: 10),
+                              height: _sizePhoto,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),),
+                            )
+                            :
+                          core_widgets.CacheImageWidget(
                             height: _sizePhoto,
-                            decoration: catalog?.id != 29?
-                            BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                image: DecorationImage(
-                                    image: CachedNetworkImageProvider('${catalog?.photo}'),
-                                    fit: BoxFit.fitHeight)):
-                            BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),),
+                            imageUrl: '${catalog?.photo}',
                           ):
                           Image.asset('assets/images/icons/icon_test.png',
                             // fit: BoxFit.fitWidth,

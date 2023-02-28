@@ -1,4 +1,3 @@
-import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
 import 'package:cookbook/feature/presentation/home/widgets/catalog_widget.dart';
 import 'package:cookbook/feature/presentation/home/widgets/index_home_widget.dart';
 import 'package:cookbook/servise_locator.dart';

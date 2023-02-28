@@ -1,6 +1,5 @@
 import 'package:cookbook/core/error/failure.dart';
 import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
-import 'package:cookbook/feature/domain/entities/recipe_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'state.freezed.dart';

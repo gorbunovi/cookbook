@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
 import 'package:cookbook/feature/domain/entities/recipe_entity.dart';
 import 'package:flutter/material.dart';
+import 'package:cookbook/core/core.dart' as core_widgets;
 
 class CardRecipeWidget extends StatelessWidget {
   const CardRecipeWidget({
@@ -69,19 +70,11 @@ class CardRecipeWidget extends StatelessWidget {
                               fit: BoxFit.fill)),
                       child: Column(
                         children: [
-
+                          const SizedBox(height: 10,),
                           recipe?.photo != null ?
-                          Container(
-                            margin: const EdgeInsets.only(left: 10, right: 10, top: 10),
+                          core_widgets.CacheImageWidget(
                             height: _sizePhoto,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                                image: DecorationImage(
-                                    image: CachedNetworkImageProvider('${recipe?.photo?[0]}'),
-                                    fit: BoxFit.cover)),
-                            // child: Image.network('${recipe?.photo?[0]}',
-                            //   height: _sizePhoto,
-                            // ),
+                            imageUrl: '${recipe?.photo?[0]}',
                           ):
                           Image.asset('assets/images/icons/icon_test.png',//
                             height: _sizePhoto,

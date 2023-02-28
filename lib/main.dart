@@ -6,7 +6,7 @@ import 'servise_locator.dart' as di;
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await di.init();
-  await Hive.initFlutter();
+  // await Hive.initFlutter();
   runApp(const MyApp());
 }
 
