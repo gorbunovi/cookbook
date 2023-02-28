@@ -20,25 +20,7 @@ class CardRecipeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double _sizePhoto = MediaQuery.of(context).size.height*0.14;
-    // print('catalog -${catalog.name} ${catalog}');
-    // print('recipe -${recipe.name} ${recipe}');
-    // print('catalogList - ${catalogList?.name??'null'}');
     return GestureDetector(
-      onTap: () {
-        if (catalog?.recipes != null) {
-          print('recipe - ${recipe}');
-          // Navigator.of(context).push(
-          //   MaterialPageRoute(builder: (context)=> RecipePage(recipe: recipe),)
-          // );
-        } else if (catalog?.catalogs != null) {
-          // Navigator.of(context).push(
-          //     MaterialPageRoute(builder: (context)=> CatalogPage(catalog: catalog),)
-          // );
-        } else {
-          print('ERROR');
-        }
-      },
-      child: GestureDetector(
         onTap: () => onTap(recipe),
         child: Center(
           child: Card(
@@ -76,7 +58,7 @@ class CardRecipeWidget extends StatelessWidget {
                             height: _sizePhoto,
                             imageUrl: '${recipe?.photo?[0]}',
                           ):
-                          Image.asset('assets/images/icons/icon_test.png',//
+                          Image.asset('assets/images/icons/icon_test.png',
                             height: _sizePhoto,
                           ),
                           recipe!.name!.length < 20 ?
@@ -99,7 +81,7 @@ class CardRecipeWidget extends StatelessWidget {
             ),
           ),
         ),
-      ),
+
     );
   }
 }

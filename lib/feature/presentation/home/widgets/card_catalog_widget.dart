@@ -59,7 +59,7 @@ class CardCatalogWidget extends StatelessWidget {
                           image: DecorationImage(
                               image: catalog?.id == 29?
                               NetworkImage('${catalog?.photo}') as ImageProvider:
-                              AssetImage('assets/images/background/bac_app_bar.png'),
+                              const AssetImage('assets/images/background/bac_app_bar.png'),
                               fit: BoxFit.fill)),
                       child: Column(
                         children: [
