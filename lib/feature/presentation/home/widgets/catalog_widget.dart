@@ -1,3 +1,4 @@
+import 'package:cookbook/core/core.dart';
 import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
 import 'package:cookbook/feature/presentation/home/widgets/card_catalog_widget.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class CatalogWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     catalog.name.toString().contains("Сборник рецептов") || catalog.name.toString().contains("Error")  ? _isIndex = true : _isIndex = false;
-    print('${catalog.name}home -- $catalog');
+    // print('${catalog.name}home -- $catalog');
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -53,19 +54,12 @@ class CatalogWidget extends StatelessWidget {
           child: AppBar(
               toolbarHeight: 30,
               title: Text(
-                catalog?.name ?? '',
+                catalog.name ?? '',
                 style: const TextStyle(
                   color: Color(0xff322316),
                 ),
               ),
               centerTitle: true,
-              leading: IconButton(
-                      onPressed: () => reset(),
-                      icon: const Icon(
-                        Icons.replay_outlined,
-                        color: Color(0xff322316),
-                      ),
-                    ),
               flexibleSpace: Container(
                 decoration: const BoxDecoration(
                     image: DecorationImage(
@@ -120,20 +114,36 @@ class CatalogWidget extends StatelessWidget {
                         ),),
                   ],
                 ),
-              )),
+              ),
+            // actions: [  // Динамический поиск
+            //   IconButton(
+            //     icon: const Icon(Icons.search),
+            //     color: Color(0xff322316),
+            //     onPressed: () {
+            //       showSearch(
+            //         context: context,
+            //         delegate: MySearchDelegate(),
+            //       );
+            //     },
+            //   ),
+            // ],
+          ),
         ),
         body: SafeArea(
-          child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2),
-            itemCount: catalog.catalogs?.length ?? 0,
-            itemBuilder: (context, index) {
-              return CardCatalogWidget(
-                catalog: catalog.catalogs![index],
-                catalogList: catalog,
-                onTap: tapCatalog,
-              );
-            },
+          child: RefreshIndicator(
+            onRefresh: () => reset(),
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2),
+              itemCount: catalog.catalogs?.length ?? 0,
+              itemBuilder: (context, index) {
+                return CardCatalogWidget(
+                  catalog: catalog.catalogs![index],
+                  catalogList: catalog,
+                  onTap: tapCatalog,
+                );
+              },
+            ),
           ),
         ),
         bottomNavigationBar: BottomAppBar(

@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           unselectedLabelStyle: core.TextStyles.textWite16
         )
       ),
-      home: const MyHomePage(),
+      initialRoute: Routes.HOME,
       onUnknownRoute: (RouteSettings settings) {
         return MaterialPageRoute(builder: (BuildContext context) {
           return const MyHomePage();

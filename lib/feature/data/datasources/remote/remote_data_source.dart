@@ -46,7 +46,7 @@ class CatalogRemoteDataSourceImpl implements CatalogRemoteDataSource {
       final response = await client.get(Uri.parse(NetworkServices.GET_HOME_CATALOG),
           headers: {'Accept': 'application/json'});
 
-      print('response.statusCode -- ${response.statusCode}');
+      // print('response.statusCode -- ${response.statusCode}');
 
       if(response.statusCode == 200){
 
