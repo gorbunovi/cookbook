@@ -43,8 +43,9 @@ class CatalogRemoteDataSourceImpl implements CatalogRemoteDataSource {
       //     body: body,
       //     headers: {'Accept': 'application/json'}
       // );
+
       final response = await client.get(
-          Uri.parse('https://gorbunov.website/public/api/catalog'),
+          Uri.parse('${NetworkServices.ROOT}${NetworkServices.GET_HOME_CATALOG}'),
           headers: {'Accept': 'application/json'},
       );
 
