@@ -6,10 +6,10 @@ import 'package:http/http.dart' as http;
 import 'package:cookbook/feature/data/models/catalog_model.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+import '../../../../core/platform/network_services.dart';
+
 abstract class CatalogRemoteDataSource {
-  /// Calls the https://rickandmortyapi.com/api/character/?page=1 endpoint.
-  ///
-  /// Throws a [ServerException] for all error codes.
+
   Future<List<CatalogModel>> getCatalog(int id);
   Future <CatalogModel> getHomeCatalog();
 }
@@ -29,7 +29,7 @@ class CatalogRemoteDataSourceImpl implements CatalogRemoteDataSource {
 
   @override
   Future<CatalogModel> getHomeCatalog() async{
-    try{
+     try{
       // Map map = {
       //   "jsonrpc":"2.0",
       //   "method":NetworkServices.GET_HOME_CATALOG,
@@ -43,8 +43,10 @@ class CatalogRemoteDataSourceImpl implements CatalogRemoteDataSource {
       //     body: body,
       //     headers: {'Accept': 'application/json'}
       // );
-      final response = await client.get(Uri.parse(NetworkServices.GET_HOME_CATALOG),
-          headers: {'Accept': 'application/json'});
+      final response = await client.get(
+          Uri.parse('https://gorbunov.website/public/api/catalog'),
+          headers: {'Accept': 'application/json'},
+      );
 
       // print('response.statusCode -- ${response.statusCode}');
 
@@ -61,6 +63,7 @@ class CatalogRemoteDataSourceImpl implements CatalogRemoteDataSource {
         return CatalogModel(id: 0, name: 'Error', photo: '', info: 'statusCode ${response.statusCode}');
       }
     }catch(e){
+       // print('getHomeCatalog(error)');
       print ('error -- $e');
       return CatalogModel(id: 0, name: 'Error', photo: '', info: '$e');
     }
