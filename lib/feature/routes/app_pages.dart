@@ -4,12 +4,21 @@ import 'package:cookbook/feature/presentation/ingridient/view/home_page.dart';
 import 'package:cookbook/feature/presentation/recipe/view/recipe_page.dart';
 import 'package:cookbook/feature/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:cookbook/core/core.dart' as core;
 
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  final _defaultLocale = const Locale('ru', '');
+
+  final List<LocalizationsDelegate<dynamic>> _localizationsDelegates = const [
+    GlobalMaterialLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+  ];
 
   // This widget is the root of your application.
   @override
@@ -29,6 +38,9 @@ class MyApp extends StatelessWidget {
           unselectedLabelStyle: core.TextStyles.textWite16
         )
       ),
+      locale: _defaultLocale,
+      supportedLocales: [_defaultLocale],
+      localizationsDelegates: _localizationsDelegates,
       initialRoute: Routes.HOME,
       onUnknownRoute: (RouteSettings settings) {
         return MaterialPageRoute(builder: (BuildContext context) {

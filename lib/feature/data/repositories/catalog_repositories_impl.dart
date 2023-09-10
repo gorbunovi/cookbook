@@ -1,6 +1,6 @@
 import 'package:cookbook/core/error/exception.dart';
 import 'package:cookbook/core/error/failure.dart';
-import 'package:cookbook/core/platform/network_info.dart';
+import 'package:cookbook/core/services/rest/network_info.dart';
 import 'package:cookbook/feature/data/datasources/local/local_data_source.dart';
 import 'package:cookbook/feature/data/datasources/remote/remote_data_source.dart';
 import 'package:cookbook/feature/data/models/catalog_model.dart';
