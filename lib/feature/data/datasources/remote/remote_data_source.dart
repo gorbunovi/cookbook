@@ -1,12 +1,5 @@
-import 'dart:convert';
-
-import 'package:cookbook/core/error/exception.dart';
-import 'package:cookbook/core/platform/network_services.dart';
-import 'package:http/http.dart' as http;
 import 'package:cookbook/feature/data/models/catalog_model.dart';
-import 'package:flutter/services.dart' show rootBundle;
-
-import '../../../../core/platform/network_services.dart';
+import '../../../../core/core.dart';
 
 abstract class CatalogRemoteDataSource {
 
@@ -15,11 +8,9 @@ abstract class CatalogRemoteDataSource {
 }
 
 class CatalogRemoteDataSourceImpl implements CatalogRemoteDataSource {
-  http.Client client;
+  RestService restService;
 
-
-
-  CatalogRemoteDataSourceImpl({required this.client});
+  CatalogRemoteDataSourceImpl({required this.restService});
 
   @override
   Future<List<CatalogModel>> getCatalog(int id) {
@@ -30,39 +21,11 @@ class CatalogRemoteDataSourceImpl implements CatalogRemoteDataSource {
   @override
   Future<CatalogModel> getHomeCatalog() async{
      try{
-      // Map map = {
-      //   "jsonrpc":"2.0",
-      //   "method":NetworkServices.GET_HOME_CATALOG,
-      //   "params": {
-      //     "id": "1",
-      //   }
-      // };
-      // var body = json.encode(map);
-      // final response = await http.post(
-      //     Uri.parse(NetworkServices.ROOT),
-      //     body: body,
-      //     headers: {'Accept': 'application/json'}
-      // );
-
-      final response = await client.get(
-          Uri.parse('${NetworkServices.ROOT}${NetworkServices.GET_HOME_CATALOG}'),
-          headers: {'Accept': 'application/json'},
-      );
-
-      // print('response.statusCode -- ${response.statusCode}');
-
-      if(response.statusCode == 200){
-
-        var catalogs = json.decode(response.body);
-        // print('catalogs -- ${catalogs}');
-        if(catalogs==null) return CatalogModel(id: 0, name: 'Error', photo: '', info: 'null');
-        // print('result -- ${catalogs}');
-        CatalogModel result = CatalogModel.fromJson(catalogs);
-        return result;
-
-      }else{
-        return CatalogModel(id: 0, name: 'Error', photo: '', info: 'statusCode ${response.statusCode}');
-      }
+       var catalogs = await restService.getRequest(Api.GetCatalog);
+       if(catalogs==null) return CatalogModel(id: 0, name: 'Error', photo: '', info: 'null');
+       // print('result -- ${catalogs}');
+       CatalogModel result = CatalogModel.fromJson(catalogs);
+       return result;
     }catch(e){
        // print('getHomeCatalog(error)');
       print ('error -- $e');
@@ -70,6 +33,4 @@ class CatalogRemoteDataSourceImpl implements CatalogRemoteDataSource {
     }
 
   }
-
-
 }
