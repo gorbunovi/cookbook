@@ -54,6 +54,4 @@ class DBProvider{
     if (resipeModel.id != null) return true;
     return false;
   }
-
-
 }
