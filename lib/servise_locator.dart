@@ -1,4 +1,5 @@
-import 'package:cookbook/core/platform/network_info.dart';
+import 'package:cookbook/core/core.dart';
+import 'package:cookbook/core/services/rest/service/network_info.dart';
 import 'package:cookbook/feature/data/datasources/local/local_data_source.dart';
 import 'package:cookbook/feature/data/datasources/remote/remote_data_source.dart';
 import 'package:cookbook/feature/data/repositories/catalog_repositories_impl.dart';
@@ -15,6 +16,7 @@ import 'package:http/http.dart' as http;
 final sl = GetIt.instance;
 
 Future<void> init() async {
+
   // Cubit
   sl.registerFactory(() => HomeController(getHomeCatalog:  sl()));
   sl.registerFactory(() => CatalogController());
@@ -39,8 +41,13 @@ Future<void> init() async {
   );
 
   sl.registerLazySingleton<CatalogRemoteDataSource>(
-    () => CatalogRemoteDataSourceImpl(client: sl()),
+    () => CatalogRemoteDataSourceImpl(restService: sl()),
   );
+
+  //Service
+  sl.registerSingletonAsync<DatabaseService>(() async => await DatabaseService().init());
+  sl.registerLazySingleton<RestService>(() => RestService(client: sl()));
+
 
   //Core
   sl.registerLazySingleton<NetworkInfo>(
