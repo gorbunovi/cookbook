@@ -1,3 +1,3 @@
-export 'api.dart';
-export 'rest_service.dart';
-export 'network_info.dart';
+export 'service/api.dart';
+export 'service/rest_service.dart';
+export 'service/network_info.dart';

@@ -1,5 +1,5 @@
 import 'package:cookbook/core/core.dart';
-import 'package:cookbook/core/services/rest/network_info.dart';
+import 'package:cookbook/core/services/rest/service/network_info.dart';
 import 'package:cookbook/feature/data/datasources/local/local_data_source.dart';
 import 'package:cookbook/feature/data/datasources/remote/remote_data_source.dart';
 import 'package:cookbook/feature/data/repositories/catalog_repositories_impl.dart';
@@ -45,7 +45,7 @@ Future<void> init() async {
   );
 
   //Service
-  // sl.registerSingletonAsync<DatabaseService>(() => DatabaseService().init());
+  sl.registerSingletonAsync<DatabaseService>(() async => await DatabaseService().init());
   sl.registerLazySingleton<RestService>(() => RestService(client: sl()));
 
 

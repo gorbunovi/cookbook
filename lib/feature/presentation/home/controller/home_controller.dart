@@ -22,7 +22,7 @@ class HomeController extends Cubit<HomeState> {
     if(currentState is Loading) return;
 
 
-    final failureOrCatalog = await getHomeCatalog(NoParams());
+    final failureOrCatalog = await getHomeCatalog();
 
     failureOrCatalog.fold(
           (failure) => emit(Error(failure)),
@@ -39,7 +39,7 @@ class HomeController extends Cubit<HomeState> {
   }
 
   Future<void> reset() async {
-    final failureOrCatalog = await getHomeCatalog(NoParams());
+    final failureOrCatalog = await getHomeCatalog();
     failureOrCatalog.fold(
           (failure) => emit(Error(failure)),
           (resault){
