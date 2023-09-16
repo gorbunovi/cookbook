@@ -31,7 +31,7 @@ class CatalogRemoteDataSourceImpl implements CatalogRemoteDataSource {
       print ('error -- $e');
       return CatalogModel(id: 0, name: 'Error', photo: '', info: '$e');
     }
-    //---
+
 
   }
 }
