@@ -1,12 +1,15 @@
 class Api {
-  static const String baseUrl = 'https://gorbunov.website/public/api';
-  static const String testUrl = 'https://gorbunov.website/public/api';
+  static const String baseUrl = 'https://gorbunov.website/public/api/';
+  static const String testUrl = 'https://gorbunov.website/public/dev/';
   static const String webUrl = '';
   static const supportMail = '';
 
-  static const GetHomeCatalog = '/homeCatalog';
-  static const GetAllCatalogs = '/getAllCatalogs';
-  static const GetCatalog = '/catalog';
+  static const GetAllV1 = 'v1/getAll';
+  static const GetCatalogV1 = 'v1/catalogs';
+  static const GetRecipeV1 = 'v1/recipe';
+  static const GetIngridientV1 = 'v1/ingridient';
+  static const GetCooking1 = 'v1/cooking';
+  static const GetPhotoV1 = 'v1/photo';
 }
 
 enum ApiType {

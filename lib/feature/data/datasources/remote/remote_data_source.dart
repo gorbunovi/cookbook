@@ -21,7 +21,7 @@ class CatalogRemoteDataSourceImpl implements CatalogRemoteDataSource {
   @override
   Future<CatalogModel> getHomeCatalog() async{
      try{
-       var catalogs = await restService.getRequest(Api.GetCatalog);
+       var catalogs = await restService.getRequest(Api.GetAllV1);
        if(catalogs==null) return CatalogModel(id: 0, name: 'Error', photo: '', info: 'null');
        // print('result -- ${catalogs}');
        CatalogModel result = CatalogModel.fromJson(catalogs);
