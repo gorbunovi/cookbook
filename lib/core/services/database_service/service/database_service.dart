@@ -7,10 +7,12 @@ class DatabaseService {
   late final Database _database;
 
   Future<DatabaseService> init() async {
+
     var documentsDirectory = await getApplicationDocumentsDirectory();
     var path = [documentsDirectory.path, '/', kDatabaseName].join();
     _database = await openDatabase(path,
       version: 1, onCreate: _onCreate, onUpgrade: _onUpgrade,);
+    print('DatabaseService');
     return this;
   }
 
@@ -52,7 +54,7 @@ class DatabaseService {
   //INSERT
   Future<void> insertQuery({
     required String tableName,
-    required Map<String, Object> value}) async =>
+    required Map<String, dynamic> value}) async =>
       await _database.insert(tableName, value);
 
   //UPDATE

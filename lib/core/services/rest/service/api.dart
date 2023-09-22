@@ -10,6 +10,7 @@ class Api {
   static const GetIngridientV1 = 'v1/ingridient';
   static const GetCooking1 = 'v1/cooking';
   static const GetPhotoV1 = 'v1/photo';
+  static const SearchV1 = 'v1/search';
 }
 
 enum ApiType {

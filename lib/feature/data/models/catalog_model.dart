@@ -1,4 +1,4 @@
-import 'package:cookbook/feature/data/datasources/local/hive/catalog_hive.dart';
+import 'package:cookbook/feature/data/datasources/catalog/local/hive/catalog_hive.dart';
 import 'package:cookbook/feature/data/models/recipe_model.dart';
 import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
