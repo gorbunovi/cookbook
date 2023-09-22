@@ -4,5 +4,6 @@ import 'package:dartz/dartz.dart';
 
 abstract class CatalogRepository{
   Future<Either<Failure,CatalogEntity>> getCatalog(int parent_id);
+  Future<Either<Failure,List<CatalogEntity>>> getCatalogs();
   Future<Either<Failure,CatalogEntity>> getHomeCatalog();
 }

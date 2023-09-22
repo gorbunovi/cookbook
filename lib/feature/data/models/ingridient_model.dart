@@ -1,4 +1,5 @@
-import 'package:cookbook/feature/data/datasources/local/hive/ingridient_hive.dart';
+
+import 'package:cookbook/feature/data/datasources/catalog/local/hive/ingridient_hive.dart';
 import 'package:cookbook/feature/domain/entities/ingridient_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
