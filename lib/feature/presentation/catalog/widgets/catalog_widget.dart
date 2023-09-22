@@ -17,6 +17,8 @@ class CatalogWidget extends StatelessWidget {
     required this.tapBottomNavigationBar,
     required this.selectedIndex,
     required this.catalog,
+    required this.search,
+    this.searchData = '',
   }) : super(key: key);
 
   final Function toCatalog;
@@ -30,12 +32,21 @@ class CatalogWidget extends StatelessWidget {
   final CatalogEntity catalog;
   int selectedIndex = 0;
   bool _isIndex = false;
-
+  String searchData;
+  final Function search;
   @override
   Widget build(BuildContext context) {
     // catalog.name == "Сборник рецептов" ? _isIndex = true : _isIndex = false;
-    print('${catalog.name}catalogs -- $catalog');
-    print('${catalog.name}catalogslength -- ${catalog.catalogs?.length}');
+    print('Поиск рецептов searchData -- $searchData');
+    // print('${catalog.name}catalogs -- $catalog');
+    // print('${catalog.name}catalogslength -- ${catalog.catalogs?.length}');
+    TextEditingController controller =
+    TextEditingController(
+        text: searchData);
+    controller.selection =
+        TextSelection.fromPosition(TextPosition(
+            offset: controller.text.length -
+                0));
 
     return Container(
       decoration: const BoxDecoration(
@@ -78,6 +89,7 @@ class CatalogWidget extends StatelessWidget {
                         width: 300,
                         padding: const EdgeInsets.only(left: 20, right: 20),
                         child: TextField(
+                          controller: controller,
                           textAlignVertical: TextAlignVertical.bottom,
                           cursorColor: const Color(0xff322316),
                           decoration: InputDecoration(
@@ -111,11 +123,27 @@ class CatalogWidget extends StatelessWidget {
                                 color: Color(0xff322316),
                               ),
                               onPressed: () {
-                                print('press');
+                                if (controller.text == '') {
+                                } else {
+                                  search(controller.text);
+                                }
                               },
                             ),
                           ),
-                        ))
+                            onSubmitted: (data) {
+                              if (data == '') {
+                              } else {
+                                search(data);
+                              }
+                            },
+                            // onChanged: (data) {
+                            //   if (data == '') {
+                            //   } else {
+                            //     search(data);
+                            //   }
+                            // },
+                        )
+                    )
                   ],
                 ),
               )),

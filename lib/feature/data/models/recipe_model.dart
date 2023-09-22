@@ -1,4 +1,4 @@
-import 'package:cookbook/feature/data/datasources/local/hive/resipe_hive.dart';
+import 'package:cookbook/feature/data/datasources/catalog/local/hive/resipe_hive.dart';
 import 'package:cookbook/feature/data/models/ingridient_model.dart';
 import 'package:cookbook/feature/domain/entities/recipe_entity.dart';
 import 'package:json_annotation/json_annotation.dart';

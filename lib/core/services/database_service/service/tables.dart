@@ -10,7 +10,7 @@ List<String> allTables = [
   kRecipePhotoTable,
 ];
 
-const String kCatalogTable = 'CATALOG';
+const String kCatalogTable = 'catalog';
 const String kIngridientTable = 'ingridient';
 const String kRecipeTable = 'recipe';
 const String kRecipeCookingTable = 'recipe_cooking';
