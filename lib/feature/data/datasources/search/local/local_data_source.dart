@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:cookbook/feature/data/models/recipe_model.dart';
 import 'package:cookbook/feature/presentation/catalog/controller/index.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:cookbook/feature/data/models/catalog_model.dart';
@@ -13,15 +14,26 @@ abstract class SearchCatalogLocalDataSorce{
 
 
 class SearchCatalogLocalDataSorceImpl implements SearchCatalogLocalDataSorce{
-  SearchCatalogLocalDataSorceImpl();
+  SearchCatalogLocalDataSorceImpl({required this.databaseService});
+  DatabaseService databaseService;
 
   @override
   Future<CatalogModel> getSearchCatalogLocal(String search) async{
+    String sql = "SELECT * FROM recipe WHERE upper (name) LIKE upper ('%$search%')";
+    late CatalogModel result;
     try{
-      final catalog = json.decode(await rootBundle.loadString('assets/catalog.json'));
-      // print ('catalog -- ${catalog}');
-      var result = CatalogModel.fromJson(catalog);
-      // print ('result -- ${result}');
+      var recipesList = await databaseService.rawQuery(sql: sql );
+      List<RecipeModel>? recipes = recipesList
+          ?.map((e) => RecipeModel.fromJson(e)).toList()
+          ?? [];
+      result = CatalogModel(
+        id: null,
+        name: 'Поиск',
+        photo: null,
+        info: 'Поиск рецептов',
+        catalogs: null,
+        recipes: recipes,
+      );
       return result;
     }catch(e){
       print ('error -- $e');

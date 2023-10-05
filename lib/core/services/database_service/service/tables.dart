@@ -19,14 +19,14 @@ const String kRecipePhotoTable = 'recipe_photo';
 
 const String kCatalogSchemes = '$kCatalogTable('
     'id INTEGER PRIMARY KEY AUTOINCREMENT,'
-    'parent_id INTEGER,'
+    'parentId INTEGER,'
     'name TEXT,'
     'photo TEXT,'
     'info TEXT)';
 
 const String kIngridientSchemes = '$kIngridientTable('
     'id INTEGER PRIMARY KEY AUTOINCREMENT,'
-    'recipe_id INTEGER,'
+    'recipeId INTEGER,'
     'name TEXT,'
     'photo TEXT,'
     'info TEXT,'
@@ -35,18 +35,19 @@ const String kIngridientSchemes = '$kIngridientTable('
 
 const String kRecipeSchemes = '$kRecipeTable('
     'id INTEGER PRIMARY KEY AUTOINCREMENT,'
-    'catalog_id INTEGER,'
+    'catalogId INTEGER,'
     'name TEXT,'
+    'photo TEXT,'
     'info TEXT)';
 
 const String kRecipeCookingSchemes = '$kRecipeCookingTable('
     'id INTEGER PRIMARY KEY AUTOINCREMENT,'
-    'recipe_id INTEGER,'
+    'recipeId INTEGER,'
     'info TEXT,'
     'photo TEXT)';
 
 const String kRecipePhotoSchemes = '$kRecipePhotoTable('
     'id INTEGER PRIMARY KEY AUTOINCREMENT,'
-    'recipe_id INTEGER,'
+    'recipeId INTEGER,'
     'info TEXT,'
     'photo TEXT)';

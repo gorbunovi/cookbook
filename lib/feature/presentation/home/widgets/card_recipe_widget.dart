@@ -59,13 +59,10 @@ class CardRecipeWidget extends StatelessWidget {
                             imageUrl: '${recipe?.photo?[0]}',
                           ):
                           Image.asset('assets/images/icons/icon_test.png',
-                            height: _sizePhoto,
+                            height: _sizePhoto *0.7,
                           ),
-                          recipe!.name!.length < 20 ?
-                          const SizedBox(height: 20):
-                          recipe!.name!.length < 35 ?
-                          const SizedBox(height: 10):
-                          const SizedBox(height: 0),
+
+                          const SizedBox(height: 10),
                           Text(
                             recipe?.name ?? '',
                             style: TextStyle(

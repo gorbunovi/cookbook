@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 class CardCatalogWidget extends StatelessWidget {
   const CardCatalogWidget({
     Key? key,
-    required this.catalog,
+    this.catalog,
     this.recipe,
     required this.onTap,
   }) : super(key: key);
 
   final RecipeEntity? recipe;
-  final CatalogEntity catalog;
+  final CatalogEntity? catalog;
   final Function onTap;
 
   @override
@@ -21,15 +21,8 @@ class CardCatalogWidget extends StatelessWidget {
     // print('recipe -${recipe.name} ${recipe}');
     return GestureDetector(
       onTap: () {
-        if (catalog.recipes != null) {
-          // print('recipe - ${recipe}');
-          // Navigator.of(context).push(
-          //   MaterialPageRoute(builder: (context)=> RecipePage(recipe: recipe),)
-          // );
-        } else if (catalog.catalogs != null) {
-          // Navigator.of(context).push(
-          //     MaterialPageRoute(builder: (context)=> CatalogPage(catalog: catalog),)
-          // );
+        if (catalog?.recipes != null) {
+        } else if (catalog?.catalogs != null) {
         } else {
           print('ERROR');
         }
@@ -69,15 +62,14 @@ class CardCatalogWidget extends StatelessWidget {
                           const SizedBox(height: 20),
                           Image.asset(
                             catalog?.photo ?? 'assets/images/icons/icon_test.png',
-                            height: _sizePhoto,
-                            width: _sizePhoto,
+                            height: _sizePhoto*0.7,
                             color: const Color(0xff322316),
                           ),
                           const SizedBox(height: 5),
                           Text(
                             catalog?.name ?? '',
                             style: TextStyle(
-                              fontSize: catalog.name!.length < 30 ? 15 : 14,
+                              fontSize: catalog!.name!.length < 30 ? 15 : 14,
                               color: const Color(0xff322316),
                             ),
                             textAlign: TextAlign.center,

@@ -34,8 +34,7 @@ class CatalogController extends Cubit<CatalogState> {
 
 
   void toHome(){
-    emit(const Loading());
-    emit(Catalog(catalog: _catalog, index: _index));
+    Get.toNamed(Routes.HOME,);
   }
 
   void search(String search) async{

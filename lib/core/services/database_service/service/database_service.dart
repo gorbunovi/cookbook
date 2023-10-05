@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -11,7 +12,7 @@ class DatabaseService {
     var documentsDirectory = await getApplicationDocumentsDirectory();
     var path = [documentsDirectory.path, '/', kDatabaseName].join();
     _database = await openDatabase(path,
-      version: 1, onCreate: _onCreate, onUpgrade: _onUpgrade,);
+      version: 2, onCreate: _onCreate, onUpgrade: _onUpgrade,);
     print('DatabaseService');
     return this;
   }
@@ -48,14 +49,34 @@ class DatabaseService {
 
   //Read
   Future<List<Map<String, dynamic?>>> getQuery(
+    {required String tableName})async =>
+      await _database.query(tableName);
+
+  Future<List<Map<String, dynamic?>>> getQueryID(
       {required String tableName, String? where}) async =>
       await _database.query(tableName, where: where);
 
+  Future<List<Map<String, dynamic?>>> getQueryWere(
+      {required String tableName, String? where}) async =>
+      await _database.query(tableName, where: where);
+
+
+
+
+//SQLQUERY
+  Future<List<Map<String, dynamic?>>> rawQuery({required String sql}) async {
+    return await _database.rawQuery(sql);
+  }
+
+
   //INSERT
-  Future<void> insertQuery({
+  Future<int> insertQuery({
     required String tableName,
-    required Map<String, dynamic> value}) async =>
-      await _database.insert(tableName, value);
+    required Map<String, dynamic> value}) async {
+    var resault = await _database.insert(tableName, value, conflictAlgorithm: ConflictAlgorithm.replace);
+    print('insertQuery ==== $resault');
+    return resault;
+  }
 
   //UPDATE
   Future<void> updateQuery({

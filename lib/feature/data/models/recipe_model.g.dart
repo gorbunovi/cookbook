@@ -8,7 +8,7 @@ part of 'recipe_model.dart';
 
 RecipeModel _$RecipeModelFromJson(Map<String, dynamic> json) => RecipeModel(
       id: json['id'],
-      catalog_id: json['catalog_id'],
+      catalogId: json['catalogId'],
       name: json['name'],
       photo:
           (json['photo'] as List<dynamic>?)?.map((e) => e as String?).toList(),
@@ -25,7 +25,7 @@ RecipeModel _$RecipeModelFromJson(Map<String, dynamic> json) => RecipeModel(
 Map<String, dynamic> _$RecipeModelToJson(RecipeModel instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'catalog_id': instance.catalog_id,
+      'catalogId': instance.catalogId,
       'name': instance.name,
       'photo': instance.photo,
       'info': instance.info,
