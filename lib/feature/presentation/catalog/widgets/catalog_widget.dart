@@ -1,8 +1,11 @@
 import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
-import 'package:cookbook/feature/presentation/home/widgets/card_catalog_widget.dart';
+import 'package:cookbook/feature/presentation/catalog/widgets/card_catalog_widget.dart';
+// import 'package:cookbook/feature/presentation/home/widgets/card_catalog_widget.dart';
 import 'package:cookbook/feature/presentation/home/widgets/card_recipe_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+
 
 class CatalogWidget extends StatelessWidget {
   CatalogWidget({
@@ -34,19 +37,17 @@ class CatalogWidget extends StatelessWidget {
   bool _isIndex = false;
   String searchData;
   final Function search;
+
+
   @override
   Widget build(BuildContext context) {
     // catalog.name == "Сборник рецептов" ? _isIndex = true : _isIndex = false;
-    print('Поиск рецептов searchData -- $searchData');
-    // print('${catalog.name}catalogs -- $catalog');
-    // print('${catalog.name}catalogslength -- ${catalog.catalogs?.length}');
     TextEditingController controller =
     TextEditingController(
         text: searchData);
     controller.selection =
         TextSelection.fromPosition(TextPosition(
-            offset: controller.text.length -
-                0));
+            offset: controller.text.length));
 
     return Container(
       decoration: const BoxDecoration(
@@ -69,6 +70,7 @@ class CatalogWidget extends StatelessWidget {
                   color: Color(0xff322316),
                 ),
               ),
+              iconTheme: const IconThemeData(color: Color(0xff322316)),
               centerTitle: true,
               leading: _isIndex? SizedBox.fromSize():
               IconButton(
@@ -171,6 +173,7 @@ class CatalogWidget extends StatelessWidget {
                 crossAxisCount: 2),
           ),
         ),
+        endDrawer: const Drawer(),
         // floatingActionButton: GestureDetector(
         //   onTap: () => toHome(),
         //   child: Container(
@@ -214,6 +217,10 @@ class CatalogWidget extends StatelessWidget {
                     icon: SvgPicture.asset('assets/images/icons/qr_icon.svg', height: 30),
                     onPressed: () => showDialog(context: context,
                       builder: (_)=> const AlertDialog(title: Text('Считать QR код рецепта'),),),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.home, size: 35, color: Color(0xff322316),),
+                    onPressed: () => toHome(),
                   ),
                   // IconButton(
                   //   icon: SvgPicture.asset('assets/images/icons/help.svg', height: 30),

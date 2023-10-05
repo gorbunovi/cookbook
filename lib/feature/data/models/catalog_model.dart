@@ -10,15 +10,15 @@ class CatalogModel extends CatalogEntity{
 
   CatalogModel({
       required int? id,
-      int? parent_id,
+      int? parentId,
       required String? name,
       required String? photo,
       required String? info,
       List<RecipeModel>? recipes,
-      List<CatalogModel>?catalogs,
+      List<CatalogModel>? catalogs,
   }): super(
     id: id,
-    parent_id: parent_id,
+    parentId: parentId,
     name: name,
     photo: photo,
     catalogs: catalogs,
@@ -30,7 +30,7 @@ class CatalogModel extends CatalogEntity{
   CatalogHive toHive() {
     return CatalogHive(
         id: id,
-        parent_id: parent_id,
+        parent_id: parentId,
         name: name,
         photo: photo,
         info: info,
@@ -42,7 +42,7 @@ class CatalogModel extends CatalogEntity{
   CatalogModel.fromHive(CatalogHive catalogHiveModel)
       : super(
       id: catalogHiveModel.id,
-      parent_id: catalogHiveModel.parent_id,
+      parentId: catalogHiveModel.parent_id,
       name: catalogHiveModel.name,
       photo: catalogHiveModel.photo,
       info: catalogHiveModel.info,
@@ -52,7 +52,7 @@ class CatalogModel extends CatalogEntity{
   Map<String, dynamic> toMap(){
     return {
       'id' : id,
-      'parent_id' : parent_id,
+      'parentId' : parentId,
       'name' : name,
       'photo' : photo,
       'info' : info,
@@ -61,7 +61,7 @@ class CatalogModel extends CatalogEntity{
 
   factory CatalogModel.fromMap(Map<String, dynamic> map,)=> CatalogModel(
     id: map['id'],
-    parent_id: map['parent_id'],
+    parentId: map['parentId'],
     name: map['name'],
     photo: map['photo'],
     info: map['info']

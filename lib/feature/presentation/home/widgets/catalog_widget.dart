@@ -41,14 +41,12 @@ class CatalogWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('Поиск рецептов searchData -- $searchData');
     TextEditingController controller =
     TextEditingController(
         text: searchData);
     controller.selection =
         TextSelection.fromPosition(TextPosition(
-            offset: controller.text.length -
-                0));
+            offset: controller.text.length));
     catalog.name.toString().contains("Сборник рецептов") || catalog.name.toString().contains("Error") || catalog.name.toString().contains("Поиск") ? _isIndex = true : _isIndex = false;
     // print('${catalog.name}home -- $catalog');
     return Container(
@@ -72,6 +70,7 @@ class CatalogWidget extends StatelessWidget {
                   color: Color(0xff322316),
                 ),
               ),
+              iconTheme: const IconThemeData(color: Color(0xff322316)),
               centerTitle: true,
               leading: !_isIndex? SizedBox.fromSize():
               IconButton(
@@ -149,7 +148,8 @@ class CatalogWidget extends StatelessWidget {
                     )
                   ],
                 ),
-              )),
+              )
+          ),
         ),
         body: SafeArea(
           child: GridView.builder(
@@ -174,6 +174,7 @@ class CatalogWidget extends StatelessWidget {
                 crossAxisCount: 2),
           ),
         ),
+        endDrawer: const Drawer(),
         // floatingActionButton: GestureDetector(
         //   onTap: () => toHome(),
         //   child: Container(
@@ -217,6 +218,10 @@ class CatalogWidget extends StatelessWidget {
                     icon: SvgPicture.asset('assets/images/icons/qr_icon.svg', height: 30),
                     onPressed: () => showDialog(context: context,
                       builder: (_)=> const AlertDialog(title: Text('Считать QR код рецепта'),),),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.home, size: 35, color: Color(0xff322316),),
+                    onPressed: () => reset(),
                   ),
                   // IconButton(
                   //   icon: SvgPicture.asset('assets/images/icons/help.svg', height: 30),

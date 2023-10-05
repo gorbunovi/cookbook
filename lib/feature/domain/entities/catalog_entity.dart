@@ -4,7 +4,7 @@ import 'package:cookbook/feature/data/models/recipe_model.dart';
 class CatalogEntity {
   CatalogEntity({
     required this.id,
-    this.parent_id,
+    this.parentId,
     required this.name,
     required this.photo,
     required this.info,
@@ -13,7 +13,7 @@ class CatalogEntity {
   });
 
   late final int? id;
-  late final int? parent_id;
+  late final int? parentId;
   late final String? name;
   late final String? photo;
   late final String? info;
