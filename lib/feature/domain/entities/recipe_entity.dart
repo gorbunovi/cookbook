@@ -4,7 +4,7 @@ import 'package:cookbook/feature/domain/entities/ingridient_entity.dart';
 class RecipeEntity {
   RecipeEntity({
     required this.id,
-    required this.catalog_id,
+    required this.catalogId,
     required this.name,
     this.photo,
     required this.info,
@@ -14,7 +14,7 @@ class RecipeEntity {
   });
 
   late final int? id;
-  final int? catalog_id;
+  final int? catalogId;
   final String? name;
   final List<String?>? photo;
   final String? info;

@@ -2,6 +2,7 @@ import 'package:cookbook/core/usecase/usecase.dart';
 import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
 import 'package:cookbook/feature/domain/entities/recipe_entity.dart';
 import 'package:cookbook/feature/domain/usecases/get_home_catalog.dart';
+import 'package:cookbook/feature/domain/usecases/save_cookbook.dart';
 import 'package:cookbook/feature/domain/usecases/search.dart';
 import 'package:cookbook/feature/routes/app_routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,23 +11,21 @@ import 'package:get/get.dart';
 import 'index.dart';
 
 class HomeController extends Cubit<HomeState> {
-  HomeController({ required this.getHomeCatalog, required this.getSearchCatalog}) : super(const Initial());
+  HomeController({ required this.getHomeCatalog, required this.getSearchCatalog, required this.saveCookbook}) : super(const Initial());//
   final GetHomeCatalog getHomeCatalog;
-  // final GetCatalogs getCatalogs;
+  final SaveCookbook saveCookbook;
   CatalogEntity _catalog = CatalogEntity(id: 0, name: 'Кулинарная книга', photo: '', info: '');
   int _index = 0;
   List<CatalogEntity?> _catalogList = [];
-  GetSearchCatalog getSearchCatalog;
+  final GetSearchCatalog getSearchCatalog;
 
 
   Future<void> init() async{
     final currentState = state;
     emit(const Loading());
     if(currentState is Loading) return;
-
-
+    //
     final failureOrCatalog = await getHomeCatalog();
-
     failureOrCatalog.fold(
           (failure) => emit(Error(failure)),
           (resault){
@@ -38,7 +37,7 @@ class HomeController extends Cubit<HomeState> {
         emit(Catalog(catalog: _catalog, index: _index));
       },
     );
-
+    await saveCookbook();
   }
 
   void search(String search) async{
@@ -64,19 +63,19 @@ class HomeController extends Cubit<HomeState> {
   }
 
   Future<void> reset() async {
-    final failureOrCatalog = await getHomeCatalog();
-    failureOrCatalog.fold(
-          (failure) => emit(Error(failure)),
-          (resault){
-            if(resault.catalogs?.length != 1){
-              _catalog = resault;
-            } else {
-              _catalog = resault.catalogs![0];
-            }
-        emit(Catalog(catalog: _catalog, index: _index));
-      },
-    );
-
+    // final failureOrCatalog = await getHomeCatalog();
+    // failureOrCatalog.fold(
+    //       (failure) => emit(Error(failure)),
+    //       (resault){
+    //         if(resault.catalogs?.length != 1){
+    //           _catalog = resault;
+    //         } else {
+    //           _catalog = resault.catalogs![0];
+    //         }
+    //     emit(Catalog(catalog: _catalog, index: _index));
+    //   },
+    // );
+    init();
   }
 
   void tapBottomNavigationBar(int index){

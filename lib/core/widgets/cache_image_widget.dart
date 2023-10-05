@@ -14,12 +14,12 @@ class CacheImageWidget extends StatelessWidget {
 
   Widget _imageWidget(ImageProvider imageProvider) {
     return Container(
-      margin: const EdgeInsets.only(left: 10, right: 10),
+      // margin: const EdgeInsets.only(left: 10, right: 10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(1),
         image: DecorationImage(
           image: imageProvider,
-          fit: BoxFit.fitHeight,
+          fit: BoxFit.cover,//fitHeight,
         ),
       ),
     );
@@ -41,7 +41,7 @@ class CacheImageWidget extends StatelessWidget {
       },
       errorWidget: (context, url, error) {
         return _imageWidget(
-          const AssetImage('assets/images/icons/icon_test.png'),
+          const AssetImage('assets/images/recipe/myso.jpg'),
         );
       },
     );

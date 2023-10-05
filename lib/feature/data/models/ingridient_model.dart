@@ -12,6 +12,8 @@ class IngridientModel extends IngridientEntity{
 
   IngridientModel({
     required id,
+    required recipeId,
+    required info,
     required name,
     required photo,
     required weight,
@@ -19,6 +21,8 @@ class IngridientModel extends IngridientEntity{
     weightPortion,
   }): super(
     id: id,
+    recipeId: recipeId,
+    info: info,
     name: name,
     photo: photo,
     weight: weight,
@@ -37,19 +41,21 @@ class IngridientModel extends IngridientEntity{
     );
   }
 
-  IngridientModel.fromHive(IngridientHive ingridientHive)
-      : super(
-    id: ingridientHive.id,
-    name: ingridientHive.name,
-    photo: ingridientHive.photo,
-    weight: ingridientHive.weight,
-    weightPortion: ingridientHive.weightPortion,
-    weightExisting: ingridientHive.weightPortion,
-  );
+  // IngridientModel.fromHive(IngridientHive ingridientHive)
+  //     : super(
+  //   id: ingridientHive.id,
+  //   name: ingridientHive.name,
+  //   photo: ingridientHive.photo,
+  //   weight: ingridientHive.weight,
+  //   weightPortion: ingridientHive.weightPortion,
+  //   weightExisting: ingridientHive.weightPortion,
+  // );
 
   Map<String, dynamic> toMap(){
     return <String, dynamic>{
       'id' : id,
+      'recipeId': recipeId,
+      'info': info,
       'name' : name,
       'photo' : photo,
       'weight' : weight,
@@ -58,6 +64,8 @@ class IngridientModel extends IngridientEntity{
 
   factory IngridientModel.fromMap(Map<String, dynamic> map,)=> IngridientModel(
     id: map['id'],
+    recipeId: map['recipe_id'],
+    info: map['info'],
     name: map['name'],
     photo: map['photo'],
     weight: map['weight'],
@@ -66,6 +74,8 @@ class IngridientModel extends IngridientEntity{
 
   factory IngridientModel.fromJson(Map<String, dynamic> json) => IngridientModel(
     id: json['id'],
+    recipeId: json['recipe_id'],
+    info: json['info'],
     name: json['name'],
     photo: json['photo'],
     weight: json['weight'] == null ? 0.0 : json['weight'].toDouble(),
@@ -76,6 +86,8 @@ class IngridientModel extends IngridientEntity{
   Map<String, dynamic> toJson() =>
       <String, dynamic>{
     'id': id,
+     'recipeId': recipeId,
+     'info': info,
     'name': name,
     'photo': photo,
     'weight': weight,
