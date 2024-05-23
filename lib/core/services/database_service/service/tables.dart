@@ -10,7 +10,7 @@ List<String> allTables = [
   kRecipePhotoTable,
 ];
 
-const String kCatalogTable = 'catalog';
+const String kCatalogTable = 'CATALOG';
 const String kIngridientTable = 'ingridient';
 const String kRecipeTable = 'recipe';
 const String kRecipeCookingTable = 'recipe_cooking';
@@ -19,14 +19,14 @@ const String kRecipePhotoTable = 'recipe_photo';
 
 const String kCatalogSchemes = '$kCatalogTable('
     'id INTEGER PRIMARY KEY AUTOINCREMENT,'
-    'parentId INTEGER,'
+    'parent_id INTEGER,'
     'name TEXT,'
     'photo TEXT,'
     'info TEXT)';
 
 const String kIngridientSchemes = '$kIngridientTable('
     'id INTEGER PRIMARY KEY AUTOINCREMENT,'
-    'recipeId INTEGER,'
+    'recipe_id INTEGER,'
     'name TEXT,'
     'photo TEXT,'
     'info TEXT,'
@@ -35,19 +35,18 @@ const String kIngridientSchemes = '$kIngridientTable('
 
 const String kRecipeSchemes = '$kRecipeTable('
     'id INTEGER PRIMARY KEY AUTOINCREMENT,'
-    'catalogId INTEGER,'
+    'catalog_id INTEGER,'
     'name TEXT,'
-    'photo TEXT,'
     'info TEXT)';
 
 const String kRecipeCookingSchemes = '$kRecipeCookingTable('
     'id INTEGER PRIMARY KEY AUTOINCREMENT,'
-    'recipeId INTEGER,'
+    'recipe_id INTEGER,'
     'info TEXT,'
     'photo TEXT)';
 
 const String kRecipePhotoSchemes = '$kRecipePhotoTable('
     'id INTEGER PRIMARY KEY AUTOINCREMENT,'
-    'recipeId INTEGER,'
+    'recipe_id INTEGER,'
     'info TEXT,'
     'photo TEXT)';

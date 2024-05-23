@@ -58,33 +58,44 @@ class CardCatalogWidget extends StatelessWidget {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               image: catalog?.id == 29?
-                              core_widgets.CacheImageWidget(
-                                height: _sizePhoto,
-                                imageUrl: '${catalog?.photo}',
-                              ) as ImageProvider:
+                              NetworkImage('${catalog?.photo}') as ImageProvider:
                               const AssetImage('assets/images/background/bac_app_bar.png'),
                               fit: BoxFit.fill)),
                       child: Column(
                         children: [
                           const SizedBox(height: 10),
                           catalog?.photo != null ?
+                          catalog?.id == 29?
+                          Container(
+                              margin: const EdgeInsets.only(left: 10, right: 10),
+                              height: _sizePhoto,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),),
+                            )
+                            :
                           core_widgets.CacheImageWidget(
                             height: _sizePhoto,
                             imageUrl: '${catalog?.photo}',
                           ):
                           Image.asset('assets/images/icons/icon_test.png',
                             // fit: BoxFit.fitWidth,
-                            height: _sizePhoto * 0.7,
+                            height: _sizePhoto,
                             // width: _sizePhoto,
                           ),
-                          const SizedBox(height: 5),
+
+                          catalog!.name!.length < 20 ?
+                          const SizedBox(height: 20):
+                          catalog!.name!.length < 25 ?
+                          const SizedBox(height: 10):
+                          const SizedBox(height: 0),
+
                           Container(
                             margin: const EdgeInsets.only(left: 5,right: 5, top: 2),
                             child: catalog?.id != 29?
                             Text(
                               catalog?.name ?? '',
                               style: TextStyle(
-                                fontSize: catalog!.name!.length < 30 ? 15 : 14,
+                                fontSize: catalog!.name!.length < 40 ? 15 : 12,
                                 color: const Color(0xff322316),
                               ),
                               textAlign: TextAlign.center,

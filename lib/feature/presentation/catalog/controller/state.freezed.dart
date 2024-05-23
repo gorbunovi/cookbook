@@ -21,9 +21,6 @@ mixin _$CatalogState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) =>
@@ -33,8 +30,6 @@ mixin _$CatalogState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) =>
@@ -44,8 +39,6 @@ mixin _$CatalogState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -56,7 +49,6 @@ mixin _$CatalogState {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) =>
@@ -66,7 +58,6 @@ mixin _$CatalogState {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) =>
@@ -76,7 +67,6 @@ mixin _$CatalogState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -141,9 +131,6 @@ class _$Initial implements Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -156,8 +143,6 @@ class _$Initial implements Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -170,8 +155,6 @@ class _$Initial implements Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -188,7 +171,6 @@ class _$Initial implements Initial {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -201,7 +183,6 @@ class _$Initial implements Initial {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -214,7 +195,6 @@ class _$Initial implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -269,9 +249,6 @@ class _$Loading implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -284,8 +261,6 @@ class _$Loading implements Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -298,8 +273,6 @@ class _$Loading implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -316,7 +289,6 @@ class _$Loading implements Loading {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -329,7 +301,6 @@ class _$Loading implements Loading {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -342,7 +313,6 @@ class _$Loading implements Loading {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -431,9 +401,6 @@ class _$Catalog implements Catalog {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -446,8 +413,6 @@ class _$Catalog implements Catalog {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -460,8 +425,6 @@ class _$Catalog implements Catalog {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -478,7 +441,6 @@ class _$Catalog implements Catalog {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -491,7 +453,6 @@ class _$Catalog implements Catalog {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -504,7 +465,6 @@ class _$Catalog implements Catalog {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -525,188 +485,6 @@ abstract class Catalog implements CatalogState {
   int get index;
   @JsonKey(ignore: true)
   _$$CatalogCopyWith<_$Catalog> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$SearchCopyWith<$Res> {
-  factory _$$SearchCopyWith(_$Search value, $Res Function(_$Search) then) =
-      __$$SearchCopyWithImpl<$Res>;
-  @useResult
-  $Res call({CatalogEntity catalog, int index, String searchData});
-}
-
-/// @nodoc
-class __$$SearchCopyWithImpl<$Res>
-    extends _$CatalogStateCopyWithImpl<$Res, _$Search>
-    implements _$$SearchCopyWith<$Res> {
-  __$$SearchCopyWithImpl(_$Search _value, $Res Function(_$Search) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? catalog = null,
-    Object? index = null,
-    Object? searchData = null,
-  }) {
-    return _then(_$Search(
-      catalog: null == catalog
-          ? _value.catalog
-          : catalog // ignore: cast_nullable_to_non_nullable
-              as CatalogEntity,
-      index: null == index
-          ? _value.index
-          : index // ignore: cast_nullable_to_non_nullable
-              as int,
-      searchData: null == searchData
-          ? _value.searchData
-          : searchData // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$Search implements Search {
-  const _$Search(
-      {required this.catalog, required this.index, required this.searchData});
-
-  @override
-  final CatalogEntity catalog;
-  @override
-  final int index;
-  @override
-  final String searchData;
-
-  @override
-  String toString() {
-    return 'CatalogState.search(catalog: $catalog, index: $index, searchData: $searchData)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$Search &&
-            (identical(other.catalog, catalog) || other.catalog == catalog) &&
-            (identical(other.index, index) || other.index == index) &&
-            (identical(other.searchData, searchData) ||
-                other.searchData == searchData));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, catalog, index, searchData);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SearchCopyWith<_$Search> get copyWith =>
-      __$$SearchCopyWithImpl<_$Search>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
-    required TResult Function() empty,
-    required TResult Function(Failure failure) error,
-  }) {
-    return search(this.catalog, index, searchData);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
-    TResult? Function()? empty,
-    TResult? Function(Failure failure)? error,
-  }) {
-    return search?.call(this.catalog, index, searchData);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
-    TResult Function()? empty,
-    TResult Function(Failure failure)? error,
-    required TResult orElse(),
-  }) {
-    if (search != null) {
-      return search(this.catalog, index, searchData);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
-    required TResult Function(Empty value) empty,
-    required TResult Function(Error value) error,
-  }) {
-    return search(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
-    TResult? Function(Empty value)? empty,
-    TResult? Function(Error value)? error,
-  }) {
-    return search?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
-    TResult Function(Empty value)? empty,
-    TResult Function(Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (search != null) {
-      return search(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Search implements CatalogState {
-  const factory Search(
-      {required final CatalogEntity catalog,
-      required final int index,
-      required final String searchData}) = _$Search;
-
-  CatalogEntity get catalog;
-  int get index;
-  String get searchData;
-  @JsonKey(ignore: true)
-  _$$SearchCopyWith<_$Search> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -749,9 +527,6 @@ class _$Empty implements Empty {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -764,8 +539,6 @@ class _$Empty implements Empty {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -778,8 +551,6 @@ class _$Empty implements Empty {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -796,7 +567,6 @@ class _$Empty implements Empty {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -809,7 +579,6 @@ class _$Empty implements Empty {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -822,7 +591,6 @@ class _$Empty implements Empty {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -903,9 +671,6 @@ class _$Error implements Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -918,8 +683,6 @@ class _$Error implements Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -932,8 +695,6 @@ class _$Error implements Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -950,7 +711,6 @@ class _$Error implements Error {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -963,7 +723,6 @@ class _$Error implements Error {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -976,7 +735,6 @@ class _$Error implements Error {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),

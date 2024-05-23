@@ -1,30 +1,35 @@
 import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
 import 'package:cookbook/feature/domain/entities/recipe_entity.dart';
 import 'package:flutter/material.dart';
-import 'package:cookbook/core/core.dart' as core_widgets;
 
 class CardCatalogWidget extends StatelessWidget {
   const CardCatalogWidget({
     Key? key,
-    this.catalog,
+    required this.catalog,
     this.recipe,
-    this.catalogList,
     required this.onTap,
   }) : super(key: key);
 
   final RecipeEntity? recipe;
   final CatalogEntity? catalog;
-  final CatalogEntity? catalogList;
-
   final Function onTap;
 
   @override
   Widget build(BuildContext context) {
     double _sizePhoto = MediaQuery.of(context).size.height*0.14;
+    print('catalogCard -${catalog?.name??'null'} ${catalog}');
+    print('recipeCard -${recipe?.name?? 'null'} ${recipe}');
     return GestureDetector(
       onTap: () {
         if (catalog?.recipes != null) {
+          // print('recipe - ${recipe}');
+          // Navigator.of(context).push(
+          //   MaterialPageRoute(builder: (context)=> RecipePage(recipe: recipe),)
+          // );
         } else if (catalog?.catalogs != null) {
+          // Navigator.of(context).push(
+          //     MaterialPageRoute(builder: (context)=> CatalogPage(catalog: catalog),)
+          // );
         } else {
           print('ERROR');
         }
@@ -52,54 +57,30 @@ class CardCatalogWidget extends StatelessWidget {
               children: <Widget>[
                 AspectRatio(
                     aspectRatio: 1,
-
-                    child: catalog?.id == 29? core_widgets.CacheImageWidget(
-                      height: _sizePhoto,
-                      imageUrl: '${catalog?.photo}',
-                    )
-                        :Container(
+                    child: Container(
                       alignment: Alignment.center,
                       decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage('assets/images/background/bac_app_bar.png'),
+                              image: AssetImage(
+                                  'assets/images/background/bac_app_bar.png'),
                               fit: BoxFit.fill)),
                       child: Column(
                         children: [
-                          const SizedBox(height: 10),
-                          catalog?.photo != null ?
-                          catalog?.id == 29?
-                          Container(
-                            margin: const EdgeInsets.only(left: 10, right: 10),
+                          const SizedBox(height: 20),
+                          Image.asset(
+                            catalog?.photo ?? '',
                             height: _sizePhoto,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),),
-                          )
-                              :
-                          core_widgets.CacheImageWidget(
-                            height: _sizePhoto,
-                            imageUrl: '${catalog?.photo}',
-                          ):
-                          Image.asset('assets/images/icons/icon_test.png',
-                            // fit: BoxFit.fitWidth,
-                            height:  _sizePhoto*0.7,
-                            // width: _sizePhoto,
+                            width: _sizePhoto,
+                            color: const Color(0xff322316),
                           ),
-                          // const SizedBox(height: 5),
-                          Container(
-                            margin: const EdgeInsets.only(left: 5,right: 5, top: 2),
-                            child: catalog?.id != 29?
-                            Text(
-                              catalog?.name ?? '',
-                              style: TextStyle(
-                                fontSize: catalog!.name!.length < 15 ? 15
-                                    : catalog!.name!.length < 20 ? 14
-                                    : catalog!.name!.length < 25 ? 13
-                                    : 12,
-                                color: const Color(0xff322316),
-                              ),
-                              textAlign: TextAlign.center,
-                            ):
-                            const Padding(padding: EdgeInsets.zero),
+                          const SizedBox(height: 5),
+                          Text(
+                            catalog?.name ?? '',
+                            style: TextStyle(
+                              fontSize: catalog!.name!.length < 30 ? 15 : 14,
+                              color: const Color(0xff322316),
+                            ),
+                            textAlign: TextAlign.center,
                           ),
                         ],
                       ),

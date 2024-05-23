@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'feature/routes/app_pages.dart';
 import 'servise_locator.dart' as di;
 
-Future<void> main() async{
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await di.init();
   HttpOverrides.global = MyHttpOverrides();

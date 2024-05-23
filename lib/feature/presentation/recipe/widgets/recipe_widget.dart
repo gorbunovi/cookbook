@@ -70,7 +70,6 @@ class RecipeWidget extends StatelessWidget {
               recipe?.name ?? '',
               style: core.TextStyles.text18,
             ),
-            iconTheme: const IconThemeData(color: Color(0xff322316)),
             leading: IconButton(
               onPressed: () => toBack(),
               icon: const Icon(
@@ -104,18 +103,13 @@ class RecipeWidget extends StatelessWidget {
                           // });
                         }),
                     items: recipe.photo != null?
-                    recipe.photo?.map((img) => core.CacheImageWidget(
-                      imageUrl: '$img',
-
-                    )
-                    //     Container(
-                    //   decoration:  BoxDecoration(
-                    //     image: DecorationImage(
-                    //         image: CachedNetworkImageProvider('$img'),
-                    //         fit: BoxFit.fitWidth),
-                    //   ),
-                    // )
-                    )
+                    recipe.photo?.map((img) => Container(
+                      decoration:  BoxDecoration(
+                        image: DecorationImage(
+                            image: CachedNetworkImageProvider('$img'),
+                            fit: BoxFit.fitWidth),
+                      ),
+                    ))
                         .toList() :
                     imgList.map((img) => Container(
                       decoration:  BoxDecoration(
@@ -421,7 +415,6 @@ class RecipeWidget extends StatelessWidget {
               ),
             ],
           ),
-          endDrawer: const Drawer(),
           bottomNavigationBar: BottomAppBar(
             shape: const CircularNotchedRectangle(),
             child: Container(
