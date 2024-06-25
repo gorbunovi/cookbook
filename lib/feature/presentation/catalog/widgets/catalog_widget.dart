@@ -1,11 +1,9 @@
 import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
 import 'package:cookbook/feature/presentation/catalog/widgets/card_catalog_widget.dart';
-// import 'package:cookbook/feature/presentation/home/widgets/card_catalog_widget.dart';
 import 'package:cookbook/feature/presentation/home/widgets/card_recipe_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-
+import 'package:cookbook/core/core.dart' as core_widgets;
 
 class CatalogWidget extends StatelessWidget {
   CatalogWidget({
@@ -38,16 +36,12 @@ class CatalogWidget extends StatelessWidget {
   String searchData;
   final Function search;
 
-
   @override
   Widget build(BuildContext context) {
     // catalog.name == "Сборник рецептов" ? _isIndex = true : _isIndex = false;
-    TextEditingController controller =
-    TextEditingController(
-        text: searchData);
-    controller.selection =
-        TextSelection.fromPosition(TextPosition(
-            offset: controller.text.length));
+    TextEditingController controller = TextEditingController(text: searchData);
+    controller.selection = TextSelection.fromPosition(
+        TextPosition(offset: controller.text.length));
 
     return Container(
       decoration: const BoxDecoration(
@@ -72,11 +66,15 @@ class CatalogWidget extends StatelessWidget {
               ),
               iconTheme: const IconThemeData(color: Color(0xff322316)),
               centerTitle: true,
-              leading: _isIndex? SizedBox.fromSize():
-              IconButton(
-                onPressed: () => toBack(),
-                icon: const Icon(Icons.arrow_back, color: Color(0xff322316),),
-              ),
+              leading: _isIndex
+                  ? SizedBox.fromSize()
+                  : IconButton(
+                      onPressed: () => toBack(),
+                      icon: const Icon(
+                        Icons.arrow_back,
+                        color: Color(0xff322316),
+                      ),
+                    ),
               flexibleSpace: Container(
                 decoration: const BoxDecoration(
                     image: DecorationImage(
@@ -132,20 +130,19 @@ class CatalogWidget extends StatelessWidget {
                               },
                             ),
                           ),
-                            onSubmitted: (data) {
-                              if (data == '') {
-                              } else {
-                                search(data);
-                              }
-                            },
-                            // onChanged: (data) {
-                            //   if (data == '') {
-                            //   } else {
-                            //     search(data);
-                            //   }
-                            // },
-                        )
-                    )
+                          onSubmitted: (data) {
+                            if (data == '') {
+                            } else {
+                              search(data);
+                            }
+                          },
+                          // onChanged: (data) {
+                          //   if (data == '') {
+                          //   } else {
+                          //     search(data);
+                          //   }
+                          // },
+                        ))
                   ],
                 ),
               )),
@@ -156,7 +153,7 @@ class CatalogWidget extends StatelessWidget {
                 ? catalog.recipes?.length ?? 0
                 : catalog.catalogs?.length ?? 0,
             itemBuilder: (context, index) {
-              if (catalog.recipes != null ) {
+              if (catalog.recipes != null) {
                 return CardRecipeWidget(
                   recipe: catalog.recipes?[index],
                   onTap: tapRecipe,
@@ -190,49 +187,7 @@ class CatalogWidget extends StatelessWidget {
         //   ),
         // ),
         // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: BottomAppBar(
-          shape: const CircularNotchedRectangle(),
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/images/background/bac_app_bar.png'),
-                  fit: BoxFit.fill),
-            ),
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height * 0.07,
-              child: Row(
-                children: [
-                  const SizedBox(width: 20,),
-                  // IconButton(
-                  //   icon: SvgPicture.asset('assets/images/icons/shopping_basket.svg', height: 30),
-                  //   onPressed: () => showDialog(context: context,
-                  //     builder: (_)=> const AlertDialog(title: Text('Добавить в список покупок'),),),
-                  // ),
-                  // IconButton(
-                  //   icon: SvgPicture.asset('assets/images/icons/to_pdf.svg', height: 30),
-                  //   onPressed: () => showDialog(context: context,
-                  //     builder: (_)=> const AlertDialog(title: Text('Сгенерирывать рецепт в PDF'),),),
-                  // ),
-                  IconButton(
-                    icon: SvgPicture.asset('assets/images/icons/qr_icon.svg', height: 30),
-                    onPressed: () => showDialog(context: context,
-                      builder: (_)=> const AlertDialog(title: Text('Считать QR код рецепта'),),),
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.home, size: 35, color: Color(0xff322316),),
-                    onPressed: () => toHome(),
-                  ),
-                  // IconButton(
-                  //   icon: SvgPicture.asset('assets/images/icons/help.svg', height: 30),
-                  //   onPressed: () => showDialog(context: context,
-                  //     builder: (_)=> AlertDialog(content: Text('${catalog.info}'),),
-                  //   ),
-                  // ),
-                ],
-              ),
-            ),
-          ),
-        ),
+        bottomNavigationBar: core_widgets.CustomBottomAppBar(context: context, function: toHome),
       ),
     );
   }

@@ -27,7 +27,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Кулинарная книга',
       theme: ThemeData(
-        useMaterial3: false,
         primarySwatch: core.AppMaterialColors.primarySwatch,
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: core.AppColors.brow,
