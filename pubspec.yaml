@@ -1,18 +1,21 @@
 name: cookbook
 description: "A new Flutter project."
 
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.0 <4.0.0'
+  sdk: '>=3.3.4 <4.0.0'
+
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: ^0.19.0
+  intl: ^0.18.1
   # Value equality
   equatable: ^2.0.5
   # bloc state managment
