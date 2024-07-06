@@ -32,8 +32,8 @@ class RecipeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     late bool isAutoPlay = true;
-    if (recipe.photo != null) {
-      recipe.photo!.length > 1 ? isAutoPlay = true : isAutoPlay = false;
+    if(recipe.photo != null){
+      recipe.photo!.length > 1 ? isAutoPlay = true: isAutoPlay = false;
     }
     List<TextEditingController> controllers = [];
     TextEditingController controllerNetto = TextEditingController(
@@ -49,6 +49,7 @@ class RecipeWidget extends StatelessWidget {
       'assets/images/recipe/myso.jpg',
       'assets/images/recipe/fish.jpg',
       'assets/images/recipe/soup2.jpg',
+
     ];
     return DefaultTabController(
       length: 2,
@@ -102,29 +103,29 @@ class RecipeWidget extends StatelessWidget {
                           //   _current = index;
                           // });
                         }),
-                    items: recipe.photo != null
-                        ? recipe.photo
-                            ?.map((img) => core.CacheImageWidget(
-                                      imageUrl: '$img',
-                                    )
-                                //     Container(
-                                //   decoration:  BoxDecoration(
-                                //     image: DecorationImage(
-                                //         image: CachedNetworkImageProvider('$img'),
-                                //         fit: BoxFit.fitWidth),
-                                //   ),
-                                // )
-                                )
-                            .toList()
-                        : imgList
-                            .map((img) => Container(
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(img),
-                                        fit: BoxFit.fitWidth),
-                                  ),
-                                ))
-                            .toList(),
+                    items: recipe.photo != null?
+                    recipe.photo?.map((img) => core.CacheImageWidget(
+                      imageUrl: '$img',
+
+                    )
+                    //     Container(
+                    //   decoration:  BoxDecoration(
+                    //     image: DecorationImage(
+                    //         image: CachedNetworkImageProvider('$img'),
+                    //         fit: BoxFit.fitWidth),
+                    //   ),
+                    // )
+                    )
+                        .toList() :
+                    imgList.map((img) => Container(
+                      decoration:  BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(
+                                img),
+                            fit: BoxFit.fitWidth),
+                      ),
+                            ))
+                        .toList(),
                   ),
                 ),
               ),
@@ -209,7 +210,7 @@ class RecipeWidget extends StatelessWidget {
                           flex: 10,
                           child: SafeArea(
                             child: ListView.builder(
-                                itemCount: recipe.ingridients?.length ?? 0,
+                                itemCount: recipe.ingridients?.length?? 0,
                                 itemBuilder: (context, index) {
                                   TextEditingController controller =
                                       TextEditingController(
@@ -243,6 +244,7 @@ class RecipeWidget extends StatelessWidget {
                                       children: [
                                         Expanded(
                                           child: Container(
+
                                             height: 30,
                                             margin: const EdgeInsets.all(5),
                                             padding: const EdgeInsets.all(2),
@@ -253,9 +255,7 @@ class RecipeWidget extends StatelessWidget {
                                             ),
                                             child: Center(
                                               child: Text(
-                                                recipe.ingridients?[index]
-                                                        ?.name ??
-                                                    '',
+                                                recipe.ingridients?[index]?.name ?? '',
                                                 textAlign: TextAlign.center,
                                                 style: core.TextStyles.text12,
                                               ),
@@ -273,8 +273,7 @@ class RecipeWidget extends StatelessWidget {
                                             ),
                                             child: Center(
                                               child: Text(
-                                                recipe
-                                                    .ingridients![index].weight!
+                                                recipe.ingridients![index].weight!
                                                     .toStringAsFixed(1),
                                                 textAlign: TextAlign.center,
                                                 style: core.TextStyles.text12,
@@ -408,8 +407,7 @@ class RecipeWidget extends StatelessWidget {
                         ),
                       ]),
 //////////////////// Приготовление //////////////////////////////////////////////
-                      InsruckshionTabbarWidget(
-                          context: context, recipe: recipe),
+                      InsruckshionTabbarWidget(context: context, recipe: recipe),
 //////////////////// Приготовление //////////////////////////////////////////////
                     ],
                   ),
@@ -425,8 +423,6 @@ class RecipeWidget extends StatelessWidget {
           ),
           endDrawer: const Drawer(),
           bottomNavigationBar: BottomAppBar(
-            height: MediaQuery.of(context).size.height * 0.07,
-            padding: const EdgeInsets.all(0),
             shape: const CircularNotchedRectangle(),
             child: Container(
               decoration: const BoxDecoration(
@@ -435,50 +431,33 @@ class RecipeWidget extends StatelessWidget {
                         AssetImage('assets/images/background/bac_app_bar.png'),
                     fit: BoxFit.fill),
               ),
-              child: Row(
-                children: [
-                  IconButton(
-                    icon: SvgPicture.asset(
-                        'assets/images/icons/shopping_basket.svg',
-                        height: 30),
-                    onPressed: () => showDialog(
-                      context: context,
-                      builder: (_) => const AlertDialog(
-                        title: Text('Добавить в список покупок'),
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.07,
+                child: Row(
+                  children: [
+                    IconButton(
+                      icon: SvgPicture.asset('assets/images/icons/shopping_basket.svg', height: 30),
+                      onPressed: () => showDialog(context: context,
+                        builder: (_)=> const AlertDialog(title: Text('Добавить в список покупок'),),),
+                    ),
+                    IconButton(
+                      icon: SvgPicture.asset('assets/images/icons/to_pdf.svg', height: 30),
+                      onPressed: () => showDialog(context: context,
+                        builder: (_)=> const AlertDialog(title: Text('Сгенерирывать рецепт в PDF'),),),
+                    ),
+                    IconButton(
+                      icon: SvgPicture.asset('assets/images/icons/qr_icon.svg', height: 30),
+                      onPressed: () => showDialog(context: context,
+                        builder: (_)=> const AlertDialog(title: Text('Считать QR код рецепта'),),),
+                    ),
+                    IconButton(
+                      icon: SvgPicture.asset('assets/images/icons/help.svg', height: 30),
+                      onPressed: () => showDialog(context: context,
+                          builder: (_)=> AlertDialog(content: Text('${recipe.info}'),),
                       ),
                     ),
-                  ),
-                  IconButton(
-                    icon: SvgPicture.asset('assets/images/icons/to_pdf.svg',
-                        height: 30),
-                    onPressed: () => showDialog(
-                      context: context,
-                      builder: (_) => const AlertDialog(
-                        title: Text('Сгенерирывать рецепт в PDF'),
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    icon: SvgPicture.asset('assets/images/icons/qr_icon.svg',
-                        height: 30),
-                    onPressed: () => showDialog(
-                      context: context,
-                      builder: (_) => const AlertDialog(
-                        title: Text('Считать QR код рецепта'),
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    icon: SvgPicture.asset('assets/images/icons/help.svg',
-                        height: 30),
-                    onPressed: () => showDialog(
-                      context: context,
-                      builder: (_) => AlertDialog(
-                        content: Text('${recipe.info}'),
-                      ),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
