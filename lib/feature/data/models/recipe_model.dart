@@ -1,4 +1,4 @@
-import 'package:cookbook/feature/data/datasources/local/hive/resipe_hive.dart';
+import 'package:cookbook/feature/data/datasources/catalog/local/hive/resipe_hive.dart';
 import 'package:cookbook/feature/data/models/ingridient_model.dart';
 import 'package:cookbook/feature/domain/entities/recipe_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -11,7 +11,7 @@ class RecipeModel extends RecipeEntity{
 
   RecipeModel({
     required id,
-    required catalog_id,
+    required catalogId,
     required name,
     List<String?>? photo,
     required info,
@@ -20,7 +20,7 @@ class RecipeModel extends RecipeEntity{
     double? weightNetto = 0.0,
   }): super(
     id: id,
-    catalog_id: catalog_id,
+    catalogId: catalogId,
     name: name,
     photo: photo,
     info: info,
@@ -32,7 +32,7 @@ class RecipeModel extends RecipeEntity{
   RecipeHive toHive() {
     return RecipeHive(
       id: id,
-      catalog_id: catalog_id,
+      catalog_id: catalogId,
       name: name,
       photo: photo,
       info: info,
@@ -43,33 +43,31 @@ class RecipeModel extends RecipeEntity{
     );
   }
 
-  RecipeModel.fromHive(RecipeHive recipeHive)
-      : super(
-    id: recipeHive.id,
-    catalog_id: recipeHive.catalog_id,
-    name: recipeHive.name,
-    photo: recipeHive.photo,
-    info: recipeHive.info,
-    weightNetto: recipeHive.weightNetto,
-    ingridients: recipeHive.ingridients!.map((ingridient) => IngridientModel.fromHive(ingridient)).toList(),
-    cooking: recipeHive.cooking,
-  );
+  // RecipeModel.fromHive(RecipeHive recipeHive)
+  //     : super(
+  //   id: recipeHive.id,
+  //   catalogId: recipeHive.catalog_id,
+  //   name: recipeHive.name,
+  //   photo: recipeHive.photo,
+  //   info: recipeHive.info,
+  //   weightNetto: recipeHive.weightNetto,
+  //   ingridients: recipeHive.ingridients!.map((ingridient) => IngridientModel.fromHive(ingridient)).toList(),
+  //   cooking: recipeHive.cooking,
+  // );
 
   Map<String, dynamic> toMap(){
     return {
       'id' : id,
-      'catalog_id' : catalog_id,
+      'catalogId' : catalogId,
       'name' : name,
-      'photo' : photo,
       'info' : info,
     };
   }
 
   factory RecipeModel.fromMap(Map<String, dynamic> map,)=> RecipeModel(
       id: map['id'],
-      catalog_id: map['catalog_id'],
+      catalogId: map['catalogId'],
       name: map['name'],
-      photo: map['photo'],
       info: map['info'],
   );
 

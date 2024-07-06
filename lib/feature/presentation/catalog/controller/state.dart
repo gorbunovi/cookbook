@@ -12,6 +12,8 @@ abstract class CatalogState with _$CatalogState {
 
   const factory CatalogState.catalog({required CatalogEntity catalog, required int index}) = Catalog;
 
+  const factory CatalogState.search({required CatalogEntity catalog, required int index, required String searchData}) = Search;
+
 
   const factory CatalogState.empty() = Empty;
 

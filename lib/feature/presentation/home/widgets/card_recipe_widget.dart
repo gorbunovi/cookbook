@@ -59,20 +59,20 @@ class CardRecipeWidget extends StatelessWidget {
                             imageUrl: '${recipe?.photo?[0]}',
                           ):
                           Image.asset('assets/images/icons/icon_test.png',
-                            height: _sizePhoto,
+                            height: _sizePhoto *0.7,
                           ),
-                          recipe!.name!.length < 20 ?
-                          const SizedBox(height: 20):
-                          recipe!.name!.length < 35 ?
-                          const SizedBox(height: 10):
-                          const SizedBox(height: 0),
-                          Text(
-                            recipe?.name ?? '',
-                            style: TextStyle(
-                              fontSize: recipe!.name!.length < 30 ? 15 : 14,
-                              color: const Color(0xff322316),
+
+                          const SizedBox(height: 10),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5, right: 5),
+                            child: Text(
+                              recipe?.name ?? '',
+                              style: TextStyle(
+                                fontSize: recipe!.name!.length < 30 ? 15 : 14,
+                                color: const Color(0xff322316),
+                              ),
+                              textAlign: TextAlign.center,
                             ),
-                            textAlign: TextAlign.center,
                           ),
                         ],
                       ),

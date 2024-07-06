@@ -12,6 +12,8 @@ abstract class HomeState with _$HomeState {
 
   const factory HomeState.catalog({required CatalogEntity catalog, required int index}) = Catalog;
 
+  const factory HomeState.search({required CatalogEntity catalog, required int index, required String searchData}) = Search;
+
   const factory HomeState.empty() = Empty;
 
   const factory HomeState.error(Failure failure) = Error;

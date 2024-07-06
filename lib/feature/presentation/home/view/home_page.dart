@@ -16,6 +16,7 @@ class MyHomePage extends StatelessWidget {
           return state.when(
               initial: () => const IndexHomeWidget(),
               catalog:(catalog, index)=> CatalogWidget(
+                searchData: '',
                 catalog: catalog,
                 selectedIndex: index,
                 reset: () => BlocProvider.of<HomeController>(context).reset(),
@@ -24,11 +25,29 @@ class MyHomePage extends StatelessWidget {
                 tapFilter: ()=> BlocProvider.of<HomeController>(context).init(),
                 tapCatalog: (catalog,)=> BlocProvider.of<HomeController>(context).
                 tapCatalog(catalog: catalog,),
-                // tapRecipe: (recipe)=> BlocProvider.of<HomeController>(context).
-                // tapRecipe(recipe: recipe),
+                tapRecipe: (recipe)=> BlocProvider.of<HomeController>(context).
+                tapRecipe(recipe: recipe),
                 toCatalog: ()=> BlocProvider.of<HomeController>(context).init(),
                 toHome: ()=> BlocProvider.of<HomeController>(context).toHome(),
                 toBack: ()=> BlocProvider.of<HomeController>(context).toBack(),
+                search: (search)=> BlocProvider.of<HomeController>(context).search(search),
+              ),
+              search: (catalog, index, searchData) => CatalogWidget(
+                searchData: searchData,
+                catalog: catalog,
+                selectedIndex: index,
+                reset: () => BlocProvider.of<HomeController>(context).reset(),
+                isFilter: false,
+                tapBottomNavigationBar: (index) => BlocProvider.of<HomeController>(context).tapBottomNavigationBar(index),
+                tapFilter: ()=> BlocProvider.of<HomeController>(context).init(),
+                tapCatalog: (catalog,)=> BlocProvider.of<HomeController>(context).
+                tapCatalog(catalog: catalog,),
+                tapRecipe: (recipe)=> BlocProvider.of<HomeController>(context).
+                tapRecipe(recipe: recipe),
+                toCatalog: ()=> BlocProvider.of<HomeController>(context).init(),
+                toHome: ()=> BlocProvider.of<HomeController>(context).toHome(),
+                toBack: ()=> BlocProvider.of<HomeController>(context).toBack(),
+                search: (search)=> BlocProvider.of<HomeController>(context).search(search),
               ),
               loading: () => const core_widgets.LoadWidget(),
               empty: () => const core_widgets.LoadWidget(),
@@ -36,6 +55,8 @@ class MyHomePage extends StatelessWidget {
           );
         });
   }
+
+
 
   @override
   Widget build(BuildContext context) {

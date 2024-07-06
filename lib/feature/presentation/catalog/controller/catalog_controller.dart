@@ -1,5 +1,6 @@
 import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
 import 'package:cookbook/feature/domain/entities/recipe_entity.dart';
+import 'package:cookbook/feature/domain/usecases/search.dart';
 import 'package:cookbook/feature/routes/app_routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -7,10 +8,11 @@ import 'package:get/get.dart';
 import 'index.dart';
 
 class CatalogController extends Cubit<CatalogState> {
-  CatalogController() : super(const Initial());
+  CatalogController({ required this.getSearchCatalog}) : super(const Initial());
   CatalogEntity _catalog = CatalogEntity(id: 0, name: 'Кулинарная книга', photo: '', info: '');
   int _index = 0;
   List<CatalogEntity?> _catalogList = [];
+  GetSearchCatalog getSearchCatalog;
 
   Future<void> init() async{
     final currentState = state;
@@ -32,8 +34,28 @@ class CatalogController extends Cubit<CatalogState> {
 
 
   void toHome(){
+    Get.toNamed(Routes.HOME,);
+  }
+
+  void search(String search) async{
+    final currentState = state;
     emit(const Loading());
-    emit(Catalog(catalog: _catalog, index: _index));
+    if(currentState is Loading) return;
+
+
+    final failureOrCatalogSearch = await getSearchCatalog(search);
+
+    failureOrCatalogSearch.fold(
+          (failure) => emit(Error(failure)),
+          (resault){
+        if(resault.catalogs?.length != 1){
+          _catalog = resault;
+        } else {
+          _catalog = resault.catalogs![0];
+        }
+        emit(Search(catalog: _catalog, index: _index, searchData: search));
+      },
+    );
   }
 
   void toBack(){
