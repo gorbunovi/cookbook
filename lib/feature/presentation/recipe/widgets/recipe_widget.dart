@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../domain/entities/recipe_entity.dart';
 import 'instruckshion_tabbar_widget.dart';
 import 'package:cookbook/core/core.dart' as core;
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 class RecipeWidget extends StatelessWidget {
   RecipeWidget({
@@ -16,7 +17,9 @@ class RecipeWidget extends StatelessWidget {
     required this.tapRecalculation,
     required this.tapRecalculationNetto,
     required this.tapBottomNavigationBar,
+    required this.wakelockClik,
     required this.recipe,
+    required this.isWakelock,
   }) : super(key: key);
 
   final Function toCatalog;
@@ -25,12 +28,15 @@ class RecipeWidget extends StatelessWidget {
   final Function tapRecalculation;
   final Function tapRecalculationNetto;
   final Function tapCatalog;
+  final Function wakelockClik;
   final Function tapBottomNavigationBar;
   final RecipeEntity recipe;
+  final isWakelock;
   int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    isWakelock ? WakelockPlus.enable() : WakelockPlus.disable();
     late bool isAutoPlay = true;
     if(recipe.photo != null){
       recipe.photo!.length > 1 ? isAutoPlay = true: isAutoPlay = false;
@@ -54,6 +60,7 @@ class RecipeWidget extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Container(
+        height: 100,
         decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
@@ -65,9 +72,12 @@ class RecipeWidget extends StatelessWidget {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            toolbarHeight: 44,
+            toolbarHeight: MediaQuery.of(context).size.height * 0.09,
             title: Text(
               recipe?.name ?? '',
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              softWrap: true,
               style: core.TextStyles.text18,
             ),
             iconTheme: const IconThemeData(color: Color(0xff322316)),
@@ -79,10 +89,21 @@ class RecipeWidget extends StatelessWidget {
               ),
             ),
             centerTitle: true,
-            flexibleSpace: const Image(
-                image: AssetImage('assets/images/background/bac_app_bar.png'),
+            flexibleSpace: Image(
+                image: const AssetImage('assets/images/background/bac_app_bar.png'),
+                height: MediaQuery.of(context).size.height * 0.11,
                 fit: BoxFit.fill),
             backgroundColor: Colors.transparent,
+            actions: [
+              IconButton(
+                  onPressed: (){
+                    wakelockClik(recipe);
+                  },
+                  icon: isWakelock ?
+                  const Icon(Icons.visibility)
+                  : const Icon(Icons.visibility_off),
+              ),
+            ],
           ),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -12,7 +12,7 @@ part of 'state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$RecipeState {
@@ -20,7 +20,7 @@ mixin _$RecipeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(RecipeEntity recipe) recipe,
+    required TResult Function(RecipeEntity recipe, bool isWakelock) recipe,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) =>
@@ -29,7 +29,7 @@ mixin _$RecipeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(RecipeEntity recipe)? recipe,
+    TResult? Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) =>
@@ -38,7 +38,7 @@ mixin _$RecipeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(RecipeEntity recipe)? recipe,
+    TResult Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -93,23 +93,25 @@ class _$RecipeStateCopyWithImpl<$Res, $Val extends RecipeState>
 }
 
 /// @nodoc
-abstract class _$$InitialCopyWith<$Res> {
-  factory _$$InitialCopyWith(_$Initial value, $Res Function(_$Initial) then) =
-      __$$InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialCopyWithImpl<$Res>
-    extends _$RecipeStateCopyWithImpl<$Res, _$Initial>
-    implements _$$InitialCopyWith<$Res> {
-  __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$RecipeStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Initial implements Initial {
-  const _$Initial();
+class _$InitialImpl implements Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -117,9 +119,9 @@ class _$Initial implements Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -130,7 +132,7 @@ class _$Initial implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(RecipeEntity recipe) recipe,
+    required TResult Function(RecipeEntity recipe, bool isWakelock) recipe,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -142,7 +144,7 @@ class _$Initial implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(RecipeEntity recipe)? recipe,
+    TResult? Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -154,7 +156,7 @@ class _$Initial implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(RecipeEntity recipe)? recipe,
+    TResult Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -207,27 +209,29 @@ class _$Initial implements Initial {
 }
 
 abstract class Initial implements RecipeState {
-  const factory Initial() = _$Initial;
+  const factory Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadingCopyWith<$Res> {
-  factory _$$LoadingCopyWith(_$Loading value, $Res Function(_$Loading) then) =
-      __$$LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingCopyWithImpl<$Res>
-    extends _$RecipeStateCopyWithImpl<$Res, _$Loading>
-    implements _$$LoadingCopyWith<$Res> {
-  __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$RecipeStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Loading implements Loading {
-  const _$Loading();
+class _$LoadingImpl implements Loading {
+  const _$LoadingImpl();
 
   @override
   String toString() {
@@ -235,9 +239,9 @@ class _$Loading implements Loading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Loading);
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -248,7 +252,7 @@ class _$Loading implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(RecipeEntity recipe) recipe,
+    required TResult Function(RecipeEntity recipe, bool isWakelock) recipe,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -260,7 +264,7 @@ class _$Loading implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(RecipeEntity recipe)? recipe,
+    TResult? Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -272,7 +276,7 @@ class _$Loading implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(RecipeEntity recipe)? recipe,
+    TResult Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -325,78 +329,89 @@ class _$Loading implements Loading {
 }
 
 abstract class Loading implements RecipeState {
-  const factory Loading() = _$Loading;
+  const factory Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$RecipeCopyWith<$Res> {
-  factory _$$RecipeCopyWith(_$Recipe value, $Res Function(_$Recipe) then) =
-      __$$RecipeCopyWithImpl<$Res>;
+abstract class _$$RecipeImplCopyWith<$Res> {
+  factory _$$RecipeImplCopyWith(
+          _$RecipeImpl value, $Res Function(_$RecipeImpl) then) =
+      __$$RecipeImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({RecipeEntity recipe});
+  $Res call({RecipeEntity recipe, bool isWakelock});
 }
 
 /// @nodoc
-class __$$RecipeCopyWithImpl<$Res>
-    extends _$RecipeStateCopyWithImpl<$Res, _$Recipe>
-    implements _$$RecipeCopyWith<$Res> {
-  __$$RecipeCopyWithImpl(_$Recipe _value, $Res Function(_$Recipe) _then)
+class __$$RecipeImplCopyWithImpl<$Res>
+    extends _$RecipeStateCopyWithImpl<$Res, _$RecipeImpl>
+    implements _$$RecipeImplCopyWith<$Res> {
+  __$$RecipeImplCopyWithImpl(
+      _$RecipeImpl _value, $Res Function(_$RecipeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? recipe = null,
+    Object? isWakelock = null,
   }) {
-    return _then(_$Recipe(
+    return _then(_$RecipeImpl(
       recipe: null == recipe
           ? _value.recipe
           : recipe // ignore: cast_nullable_to_non_nullable
               as RecipeEntity,
+      isWakelock: null == isWakelock
+          ? _value.isWakelock
+          : isWakelock // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 
-class _$Recipe implements Recipe {
-  const _$Recipe({required this.recipe});
+class _$RecipeImpl implements Recipe {
+  const _$RecipeImpl({required this.recipe, required this.isWakelock});
 
   @override
   final RecipeEntity recipe;
+  @override
+  final bool isWakelock;
 
   @override
   String toString() {
-    return 'RecipeState.recipe(recipe: $recipe)';
+    return 'RecipeState.recipe(recipe: $recipe, isWakelock: $isWakelock)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Recipe &&
-            (identical(other.recipe, recipe) || other.recipe == recipe));
+            other is _$RecipeImpl &&
+            (identical(other.recipe, recipe) || other.recipe == recipe) &&
+            (identical(other.isWakelock, isWakelock) ||
+                other.isWakelock == isWakelock));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, recipe);
+  int get hashCode => Object.hash(runtimeType, recipe, isWakelock);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RecipeCopyWith<_$Recipe> get copyWith =>
-      __$$RecipeCopyWithImpl<_$Recipe>(this, _$identity);
+  _$$RecipeImplCopyWith<_$RecipeImpl> get copyWith =>
+      __$$RecipeImplCopyWithImpl<_$RecipeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(RecipeEntity recipe) recipe,
+    required TResult Function(RecipeEntity recipe, bool isWakelock) recipe,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
-    return recipe(this.recipe);
+    return recipe(this.recipe, isWakelock);
   }
 
   @override
@@ -404,11 +419,11 @@ class _$Recipe implements Recipe {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(RecipeEntity recipe)? recipe,
+    TResult? Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
-    return recipe?.call(this.recipe);
+    return recipe?.call(this.recipe, isWakelock);
   }
 
   @override
@@ -416,13 +431,13 @@ class _$Recipe implements Recipe {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(RecipeEntity recipe)? recipe,
+    TResult Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
     if (recipe != null) {
-      return recipe(this.recipe);
+      return recipe(this.recipe, isWakelock);
     }
     return orElse();
   }
@@ -469,32 +484,37 @@ class _$Recipe implements Recipe {
 }
 
 abstract class Recipe implements RecipeState {
-  const factory Recipe({required final RecipeEntity recipe}) = _$Recipe;
+  const factory Recipe(
+      {required final RecipeEntity recipe,
+      required final bool isWakelock}) = _$RecipeImpl;
 
   RecipeEntity get recipe;
+  bool get isWakelock;
   @JsonKey(ignore: true)
-  _$$RecipeCopyWith<_$Recipe> get copyWith =>
+  _$$RecipeImplCopyWith<_$RecipeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EmptyCopyWith<$Res> {
-  factory _$$EmptyCopyWith(_$Empty value, $Res Function(_$Empty) then) =
-      __$$EmptyCopyWithImpl<$Res>;
+abstract class _$$EmptyImplCopyWith<$Res> {
+  factory _$$EmptyImplCopyWith(
+          _$EmptyImpl value, $Res Function(_$EmptyImpl) then) =
+      __$$EmptyImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EmptyCopyWithImpl<$Res>
-    extends _$RecipeStateCopyWithImpl<$Res, _$Empty>
-    implements _$$EmptyCopyWith<$Res> {
-  __$$EmptyCopyWithImpl(_$Empty _value, $Res Function(_$Empty) _then)
+class __$$EmptyImplCopyWithImpl<$Res>
+    extends _$RecipeStateCopyWithImpl<$Res, _$EmptyImpl>
+    implements _$$EmptyImplCopyWith<$Res> {
+  __$$EmptyImplCopyWithImpl(
+      _$EmptyImpl _value, $Res Function(_$EmptyImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Empty implements Empty {
-  const _$Empty();
+class _$EmptyImpl implements Empty {
+  const _$EmptyImpl();
 
   @override
   String toString() {
@@ -502,9 +522,9 @@ class _$Empty implements Empty {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Empty);
+        (other.runtimeType == runtimeType && other is _$EmptyImpl);
   }
 
   @override
@@ -515,7 +535,7 @@ class _$Empty implements Empty {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(RecipeEntity recipe) recipe,
+    required TResult Function(RecipeEntity recipe, bool isWakelock) recipe,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -527,7 +547,7 @@ class _$Empty implements Empty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(RecipeEntity recipe)? recipe,
+    TResult? Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -539,7 +559,7 @@ class _$Empty implements Empty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(RecipeEntity recipe)? recipe,
+    TResult Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -592,22 +612,24 @@ class _$Empty implements Empty {
 }
 
 abstract class Empty implements RecipeState {
-  const factory Empty() = _$Empty;
+  const factory Empty() = _$EmptyImpl;
 }
 
 /// @nodoc
-abstract class _$$ErrorCopyWith<$Res> {
-  factory _$$ErrorCopyWith(_$Error value, $Res Function(_$Error) then) =
-      __$$ErrorCopyWithImpl<$Res>;
+abstract class _$$ErrorImplCopyWith<$Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Failure failure});
 }
 
 /// @nodoc
-class __$$ErrorCopyWithImpl<$Res>
-    extends _$RecipeStateCopyWithImpl<$Res, _$Error>
-    implements _$$ErrorCopyWith<$Res> {
-  __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$RecipeStateCopyWithImpl<$Res, _$ErrorImpl>
+    implements _$$ErrorImplCopyWith<$Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -615,7 +637,7 @@ class __$$ErrorCopyWithImpl<$Res>
   $Res call({
     Object? failure = null,
   }) {
-    return _then(_$Error(
+    return _then(_$ErrorImpl(
       null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -626,8 +648,8 @@ class __$$ErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Error implements Error {
-  const _$Error(this.failure);
+class _$ErrorImpl implements Error {
+  const _$ErrorImpl(this.failure);
 
   @override
   final Failure failure;
@@ -638,10 +660,10 @@ class _$Error implements Error {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Error &&
+            other is _$ErrorImpl &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -651,15 +673,15 @@ class _$Error implements Error {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorCopyWith<_$Error> get copyWith =>
-      __$$ErrorCopyWithImpl<_$Error>(this, _$identity);
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(RecipeEntity recipe) recipe,
+    required TResult Function(RecipeEntity recipe, bool isWakelock) recipe,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -671,7 +693,7 @@ class _$Error implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(RecipeEntity recipe)? recipe,
+    TResult? Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -683,7 +705,7 @@ class _$Error implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(RecipeEntity recipe)? recipe,
+    TResult Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -736,9 +758,10 @@ class _$Error implements Error {
 }
 
 abstract class Error implements RecipeState {
-  const factory Error(final Failure failure) = _$Error;
+  const factory Error(final Failure failure) = _$ErrorImpl;
 
   Failure get failure;
   @JsonKey(ignore: true)
-  _$$ErrorCopyWith<_$Error> get copyWith => throw _privateConstructorUsedError;
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

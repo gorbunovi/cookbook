@@ -45,6 +45,8 @@ dependencies:
   path_provider: ^2.0.12
   shared_preferences: ^2.1.2
 
+  wakelock_plus: ^1.2.5
+
   cupertino_icons: ^1.0.6
 
 dev_dependencies:

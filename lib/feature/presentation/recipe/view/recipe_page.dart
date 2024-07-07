@@ -21,8 +21,10 @@ class RecipePege extends StatelessWidget {
         builder: (context, state) {
           return state.when(
               initial: () => const IndexHomeWidget(),
-              recipe:(recipe)=> RecipeWidget(
+              recipe:(recipe, isWakelock)=> RecipeWidget(
                 recipe: recipe,
+                isWakelock: isWakelock,
+                wakelockClik: (recipe)=> BlocProvider.of<RecipeController>(context).wakelockClik(recipe: recipe),
                 tapRecalculationNetto: (recalculationNetto, recipe)=> BlocProvider.of<RecipeController>(context).
                 tapRecalculationNetto(recalculationNetto: recalculationNetto, recipe: recipe) ,
                 tapRecalculation: (original, recalculation, recipe)=> BlocProvider.of<RecipeController>(context).

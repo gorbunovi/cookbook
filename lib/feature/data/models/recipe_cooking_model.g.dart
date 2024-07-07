@@ -8,8 +8,8 @@ part of 'recipe_cooking_model.dart';
 
 RecipeCookingModel _$RecipeCookingModelFromJson(Map<String, dynamic> json) =>
     RecipeCookingModel(
-      id: json['id'] as int,
-      recipeId: json['recipeId'] as int,
+      id: (json['id'] as num).toInt(),
+      recipeId: (json['recipeId'] as num).toInt(),
       photo: json['photo'] as String?,
       info: json['info'] as String?,
     );
