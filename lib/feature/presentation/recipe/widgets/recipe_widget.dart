@@ -74,7 +74,7 @@ class RecipeWidget extends StatelessWidget {
           appBar: AppBar(
             toolbarHeight: MediaQuery.of(context).size.height * 0.09,
             title: Text(
-              recipe?.name ?? '',
+              '${recipe?.id?? -1}. ${recipe?.name ?? ' '}',
               textAlign: TextAlign.center,
               maxLines: 2,
               softWrap: true,

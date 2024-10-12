@@ -27,17 +27,17 @@ class CatalogModel extends CatalogEntity{
   );
 
 
-  CatalogHive toHive() {
-    return CatalogHive(
-        id: id,
-        parent_id: parentId,
-        name: name,
-        photo: photo,
-        info: info,
-        recipes: recipes?.map((resipe) => resipe.toHive()).toList(),
-        catalogs: catalogs?.map((catalog) => catalog.toHive()).toList(),
-    );
-  }
+  // CatalogHive toHive() {
+  //   return CatalogHive(
+  //       id: id,
+  //       parent_id: parentId,
+  //       name: name,
+  //       photo: photo,
+  //       info: info,
+  //       recipes: recipes?.map((resipe) => resipe.toHive()).toList(),
+  //       catalogs: catalogs?.map((catalog) => catalog.toHive()).toList(),
+  //   );
+  // }
 
   CatalogModel.fromHive(CatalogHive catalogHiveModel)
       : super(

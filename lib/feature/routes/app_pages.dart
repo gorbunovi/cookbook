@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
           unselectedLabelStyle: core.TextStyles.textWite16
         )
       ),
+      home: const MyHomePage(),
       locale: _defaultLocale,
       supportedLocales: [_defaultLocale],
       localizationsDelegates: _localizationsDelegates,

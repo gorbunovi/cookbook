@@ -19,7 +19,7 @@ class SearchCatalogLocalDataSorceImpl implements SearchCatalogLocalDataSorce{
 
   @override
   Future<CatalogModel> getSearchCatalogLocal(String search) async{
-    String sql = "SELECT * FROM recipe WHERE upper (name) LIKE upper ('%$search%')";
+    String sql = "SELECT * FROM recipe WHERE upper (name) LIKE upper ('%${search.toLowerCase()}%')";
     late CatalogModel result;
     try{
       var recipesList = await databaseService.rawQuery(sql: sql );

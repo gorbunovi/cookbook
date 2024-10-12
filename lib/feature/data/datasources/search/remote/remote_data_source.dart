@@ -14,7 +14,7 @@ class SearchCatalogRemoteDataSourceImpl implements SearchRemoteDataSource {
   @override
   Future<CatalogModel> getSearchCatalog(String search) async{
     try{
-      var catalogs = await restService.getRequest('${Api.SearchV1}/$search');
+      var catalogs = await restService.getRequest('${Api.SearchV1}/${search.toLowerCase()}');
       if(catalogs==null) return CatalogModel(id: 0, name: 'Error', photo: '', info: 'null');
       // print('result -- ${catalogs}');
       CatalogModel result = CatalogModel.fromJson(catalogs);
