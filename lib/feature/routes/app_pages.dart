@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: core.AppColors.brow,
         ),
-        tabBarTheme: TabBarThemeData(
+        tabBarTheme: TabBarTheme(
           labelColor: core.AppColors.brow,
           labelStyle: core.TextStyles.textBrow16,
           unselectedLabelColor: const Color(0xFFD7C2A5),
