@@ -41,7 +41,6 @@ class CatalogWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // List testList = catalog.recipes + catalog.catalogs;
     // catalog.name == "Сборник рецептов" ? _isIndex = true : _isIndex = false;
     TextEditingController controller =
     TextEditingController(
@@ -149,7 +148,7 @@ class CatalogWidget extends StatelessWidget {
                     )
                   ],
                 ),
-              ),),
+              )),
         ),
         body: SafeArea(
           child: GridView.builder(

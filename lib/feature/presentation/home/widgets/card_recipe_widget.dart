@@ -66,9 +66,9 @@ class CardRecipeWidget extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(left: 5, right: 5),
                             child: Text(
-                              '${recipe?.id?? -1}. ${recipe?.name ?? ' '}',
+                              '${recipe?.id??''}. ${recipe?.name ?? ''}',
                               style: TextStyle(
-                                fontSize: recipe!.name!.length < 30 ? 15 : 14,
+                                fontSize: (5+recipe!.name!.length) < 30 ? 15 : 14,
                                 color: const Color(0xff322316),
                               ),
                               textAlign: TextAlign.center,

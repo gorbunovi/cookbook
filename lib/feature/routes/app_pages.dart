@@ -32,14 +32,13 @@ class MyApp extends StatelessWidget {
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: core.AppColors.brow,
         ),
-        tabBarTheme: TabBarTheme(
+        tabBarTheme: TabBarThemeData(
           labelColor: core.AppColors.brow,
           labelStyle: core.TextStyles.textBrow16,
           unselectedLabelColor: const Color(0xFFD7C2A5),
           unselectedLabelStyle: core.TextStyles.textWite16
         )
       ),
-      home: const MyHomePage(),
       locale: _defaultLocale,
       supportedLocales: [_defaultLocale],
       localizationsDelegates: _localizationsDelegates,

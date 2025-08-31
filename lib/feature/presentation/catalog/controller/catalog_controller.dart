@@ -5,14 +5,13 @@ import 'package:cookbook/feature/routes/app_routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
-import '../../../domain/entities/catalog_recipe.dart';
 import 'index.dart';
 
 class CatalogController extends Cubit<CatalogState> {
   CatalogController({ required this.getSearchCatalog}) : super(const Initial());
   CatalogEntity _catalog = CatalogEntity(id: 0, name: 'Кулинарная книга', photo: '', info: '');
   int _index = 0;
-  List<CatalogRecipe?> _catalogList = [];
+  List<CatalogEntity?> _catalogList = [];
   GetSearchCatalog getSearchCatalog;
 
   Future<void> init() async{

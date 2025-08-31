@@ -13,14 +13,13 @@ class RecipeController extends Cubit<RecipeState> {
   CatalogEntity catalog =
       CatalogEntity(id: 0, name: 'Кулинарная книга', photo: '', info: '');
   int _index = 0;
-  bool isWakelock = false;
 
   Future<void> init(RecipeEntity recipe) async {
     final currentState = state;
     emit(const Loading());
     if (currentState is Loading) return;
     print(' Recipe -- $recipe');
-    emit(Recipe(recipe: recipe, isWakelock: isWakelock));
+    emit(Recipe(recipe: recipe));
   }
 
   void tapBottomNavigationBar(int index) {
@@ -49,7 +48,7 @@ class RecipeController extends Cubit<RecipeState> {
       recipe.ingridients?.forEach((ingridient) {
         ingridient.weightExisting = null;
         emit(Loading());
-        emit(Recipe(recipe: recipe, isWakelock: isWakelock));
+        emit(Recipe(recipe: recipe));
       });
     } else {
       print('original -- $original,  recalculation -- $recalculation');
@@ -60,7 +59,7 @@ class RecipeController extends Cubit<RecipeState> {
             (ingridient.weight! * coefficient).toPrecision(2);
       });
       emit(Loading());
-      emit(Recipe(recipe: recipe, isWakelock: isWakelock));
+      emit(Recipe(recipe: recipe));
     }
   }
 
@@ -71,7 +70,7 @@ class RecipeController extends Cubit<RecipeState> {
       recipe.ingridients?.forEach((ingridient) {
         ingridient.weightExisting = null;
         emit(Loading());
-        emit(Recipe(recipe: recipe, isWakelock: isWakelock));
+        emit(Recipe(recipe: recipe));
       });
     } else {
       double coefficient = recalculationNetto / 1000;
@@ -83,12 +82,7 @@ class RecipeController extends Cubit<RecipeState> {
       });
     }
     emit(Loading());
-    emit(Recipe(recipe: recipe, isWakelock: isWakelock));
-  }
-
-  void wakelockClik({required RecipeEntity recipe,}){
-    isWakelock = !isWakelock;
-    emit(Recipe(recipe: recipe, isWakelock: isWakelock));
+    emit(Recipe(recipe: recipe));
   }
 
   void toBack() {

@@ -1,8 +1,7 @@
 import 'package:cookbook/feature/data/models/catalog_model.dart';
 import 'package:cookbook/feature/data/models/recipe_model.dart';
-import 'package:cookbook/feature/domain/entities/catalog_recipe.dart';
 
-class CatalogEntity extends CatalogRecipe {
+class CatalogEntity {
   CatalogEntity({
     required this.id,
     this.parentId,
