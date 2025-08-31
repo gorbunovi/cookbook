@@ -67,7 +67,7 @@ class RecipeWidget extends StatelessWidget {
           appBar: AppBar(
             toolbarHeight: 44,
             title: Text(
-              recipe?.name ?? '',
+              '${recipe.id}. ${recipe.name}',
               style: core.TextStyles.text18,
             ),
             iconTheme: const IconThemeData(color: Color(0xff322316)),

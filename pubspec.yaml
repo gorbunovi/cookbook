@@ -1,21 +1,21 @@
 name: cookbook
 description: "A new Flutter project."
 
+
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
-
+  sdk: ^3.9.0
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: ^0.18.1
+  intl: ^0.20.2
   # Value equality
   equatable: ^2.0.5
   # bloc state managment
@@ -35,7 +35,7 @@ dependencies:
   flutter_svg: ^1.1.6
   flutter_svg_provider: ^1.0.3
   # images carousel slider
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.1.1
   # network
   http: ^0.13.5
   internet_connection_checker: ^1.0.0+1
@@ -45,7 +45,7 @@ dependencies:
   path_provider: ^2.0.12
   shared_preferences: ^2.1.2
 
-  cupertino_icons: ^1.0.6
+  cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:
@@ -60,7 +60,7 @@ dev_dependencies:
   # code generators
   build_runner: ^2.3.2
 
-  flutter_lints: ^3.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -68,9 +68,6 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
   assets:
@@ -95,3 +92,4 @@ flutter:
           style: italic
         - asset: assets/fonts/roboto/Roboto-Bold.ttf
           weight: 900
+
