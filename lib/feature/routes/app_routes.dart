@@ -4,4 +4,5 @@ abstract class Routes{
   static const CATALOG = '/catalog';
   static const RECIPE = '/recipe';
   static const INGRIDIENT = '/ingridient';
+  static const CALCULATOR = '/calkulators';
 }

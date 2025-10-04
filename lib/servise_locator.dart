@@ -24,6 +24,8 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
+import 'feature/presentation/calculator/controller/calculator_controller.dart';
+
 final sl = GetIt.instance;
 
 Future<void> init() async {
@@ -40,7 +42,9 @@ Future<void> init() async {
   );
   sl.registerFactory(() => CatalogController(getSearchCatalog: sl()));
   sl.registerFactory(() => RecipeController(getCatalogs: sl()));
+  sl.registerFactory(() => CalculatorsController());
   // sl.registerFactory(() => CatalogController());
+
 
   //UseCases
   sl.registerLazySingleton(() => GetCatalogs(sl()));

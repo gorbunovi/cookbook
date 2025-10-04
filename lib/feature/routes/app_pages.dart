@@ -8,6 +8,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:cookbook/core/core.dart' as core;
 
+import '../presentation/calculator/view/calculators_page.dart';
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -72,6 +74,12 @@ class MyApp extends StatelessWidget {
               transition: Transition.fade,
               transitionDuration: const Duration(milliseconds: 500),
               page: () => const CatalogPage(),
+            ),
+        GetPage(
+              name: Routes.CALCULATOR,
+              transition: Transition.fade,
+              transitionDuration: const Duration(milliseconds: 500),
+              page: () => const CalculatorPage(),
             ),
       ],
     );

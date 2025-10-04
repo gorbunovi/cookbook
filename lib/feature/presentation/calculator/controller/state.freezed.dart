@@ -15,15 +15,13 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$CatalogState {
+mixin _$CalculatorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
+    required TResult Function() catalog,
+    required TResult Function() calculator,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) =>
@@ -32,9 +30,8 @@ mixin _$CatalogState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult? Function()? catalog,
+    TResult? Function()? calculator,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) =>
@@ -43,9 +40,8 @@ mixin _$CatalogState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult Function()? catalog,
+    TResult Function()? calculator,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -56,7 +52,7 @@ mixin _$CatalogState {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
+    required TResult Function(Calculator value) calculator,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) =>
@@ -66,7 +62,7 @@ mixin _$CatalogState {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
+    TResult? Function(Calculator value)? calculator,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) =>
@@ -76,7 +72,7 @@ mixin _$CatalogState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
+    TResult Function(Calculator value)? calculator,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -85,16 +81,16 @@ mixin _$CatalogState {
 }
 
 /// @nodoc
-abstract class $CatalogStateCopyWith<$Res> {
-  factory $CatalogStateCopyWith(
-          CatalogState value, $Res Function(CatalogState) then) =
-      _$CatalogStateCopyWithImpl<$Res, CatalogState>;
+abstract class $CalculatorStateCopyWith<$Res> {
+  factory $CalculatorStateCopyWith(
+          CalculatorState value, $Res Function(CalculatorState) then) =
+      _$CalculatorStateCopyWithImpl<$Res, CalculatorState>;
 }
 
 /// @nodoc
-class _$CatalogStateCopyWithImpl<$Res, $Val extends CatalogState>
-    implements $CatalogStateCopyWith<$Res> {
-  _$CatalogStateCopyWithImpl(this._value, this._then);
+class _$CalculatorStateCopyWithImpl<$Res, $Val extends CalculatorState>
+    implements $CalculatorStateCopyWith<$Res> {
+  _$CalculatorStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -111,7 +107,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$CatalogStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$CalculatorStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -125,7 +121,7 @@ class _$InitialImpl implements Initial {
 
   @override
   String toString() {
-    return 'CatalogState.initial()';
+    return 'CalculatorState.initial()';
   }
 
   @override
@@ -142,10 +138,8 @@ class _$InitialImpl implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
+    required TResult Function() catalog,
+    required TResult Function() calculator,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -157,9 +151,8 @@ class _$InitialImpl implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult? Function()? catalog,
+    TResult? Function()? calculator,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -171,9 +164,8 @@ class _$InitialImpl implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult Function()? catalog,
+    TResult Function()? calculator,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -190,7 +182,7 @@ class _$InitialImpl implements Initial {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
+    required TResult Function(Calculator value) calculator,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -203,7 +195,7 @@ class _$InitialImpl implements Initial {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
+    TResult? Function(Calculator value)? calculator,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -216,7 +208,7 @@ class _$InitialImpl implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
+    TResult Function(Calculator value)? calculator,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -228,7 +220,7 @@ class _$InitialImpl implements Initial {
   }
 }
 
-abstract class Initial implements CatalogState {
+abstract class Initial implements CalculatorState {
   const factory Initial() = _$InitialImpl;
 }
 
@@ -241,7 +233,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$CatalogStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$CalculatorStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -255,7 +247,7 @@ class _$LoadingImpl implements Loading {
 
   @override
   String toString() {
-    return 'CatalogState.loading()';
+    return 'CalculatorState.loading()';
   }
 
   @override
@@ -272,10 +264,8 @@ class _$LoadingImpl implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
+    required TResult Function() catalog,
+    required TResult Function() calculator,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -287,9 +277,8 @@ class _$LoadingImpl implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult? Function()? catalog,
+    TResult? Function()? calculator,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -301,9 +290,8 @@ class _$LoadingImpl implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult Function()? catalog,
+    TResult Function()? calculator,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -320,7 +308,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
+    required TResult Function(Calculator value) calculator,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -333,7 +321,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
+    TResult? Function(Calculator value)? calculator,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -346,7 +334,7 @@ class _$LoadingImpl implements Loading {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
+    TResult Function(Calculator value)? calculator,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -358,7 +346,7 @@ class _$LoadingImpl implements Loading {
   }
 }
 
-abstract class Loading implements CatalogState {
+abstract class Loading implements CalculatorState {
   const factory Loading() = _$LoadingImpl;
 }
 
@@ -367,83 +355,47 @@ abstract class _$$CatalogImplCopyWith<$Res> {
   factory _$$CatalogImplCopyWith(
           _$CatalogImpl value, $Res Function(_$CatalogImpl) then) =
       __$$CatalogImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({CatalogEntity catalog, int index});
 }
 
 /// @nodoc
 class __$$CatalogImplCopyWithImpl<$Res>
-    extends _$CatalogStateCopyWithImpl<$Res, _$CatalogImpl>
+    extends _$CalculatorStateCopyWithImpl<$Res, _$CatalogImpl>
     implements _$$CatalogImplCopyWith<$Res> {
   __$$CatalogImplCopyWithImpl(
       _$CatalogImpl _value, $Res Function(_$CatalogImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? catalog = null,
-    Object? index = null,
-  }) {
-    return _then(_$CatalogImpl(
-      catalog: null == catalog
-          ? _value.catalog
-          : catalog // ignore: cast_nullable_to_non_nullable
-              as CatalogEntity,
-      index: null == index
-          ? _value.index
-          : index // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$CatalogImpl implements Catalog {
-  const _$CatalogImpl({required this.catalog, required this.index});
-
-  @override
-  final CatalogEntity catalog;
-  @override
-  final int index;
+  const _$CatalogImpl();
 
   @override
   String toString() {
-    return 'CatalogState.catalog(catalog: $catalog, index: $index)';
+    return 'CalculatorState.catalog()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CatalogImpl &&
-            (identical(other.catalog, catalog) || other.catalog == catalog) &&
-            (identical(other.index, index) || other.index == index));
+        (other.runtimeType == runtimeType && other is _$CatalogImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, catalog, index);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CatalogImplCopyWith<_$CatalogImpl> get copyWith =>
-      __$$CatalogImplCopyWithImpl<_$CatalogImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
+    required TResult Function() catalog,
+    required TResult Function() calculator,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
-    return catalog(this.catalog, index);
+    return catalog();
   }
 
   @override
@@ -451,13 +403,12 @@ class _$CatalogImpl implements Catalog {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult? Function()? catalog,
+    TResult? Function()? calculator,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
-    return catalog?.call(this.catalog, index);
+    return catalog?.call();
   }
 
   @override
@@ -465,15 +416,14 @@ class _$CatalogImpl implements Catalog {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult Function()? catalog,
+    TResult Function()? calculator,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
     if (catalog != null) {
-      return catalog(this.catalog, index);
+      return catalog();
     }
     return orElse();
   }
@@ -484,7 +434,7 @@ class _$CatalogImpl implements Catalog {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
+    required TResult Function(Calculator value) calculator,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -497,7 +447,7 @@ class _$CatalogImpl implements Catalog {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
+    TResult? Function(Calculator value)? calculator,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -510,7 +460,7 @@ class _$CatalogImpl implements Catalog {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
+    TResult Function(Calculator value)? calculator,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -522,110 +472,56 @@ class _$CatalogImpl implements Catalog {
   }
 }
 
-abstract class Catalog implements CatalogState {
-  const factory Catalog(
-      {required final CatalogEntity catalog,
-      required final int index}) = _$CatalogImpl;
-
-  CatalogEntity get catalog;
-  int get index;
-  @JsonKey(ignore: true)
-  _$$CatalogImplCopyWith<_$CatalogImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class Catalog implements CalculatorState {
+  const factory Catalog() = _$CatalogImpl;
 }
 
 /// @nodoc
-abstract class _$$SearchImplCopyWith<$Res> {
-  factory _$$SearchImplCopyWith(
-          _$SearchImpl value, $Res Function(_$SearchImpl) then) =
-      __$$SearchImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({CatalogEntity catalog, int index, String searchData});
+abstract class _$$CalculatorImplCopyWith<$Res> {
+  factory _$$CalculatorImplCopyWith(
+          _$CalculatorImpl value, $Res Function(_$CalculatorImpl) then) =
+      __$$CalculatorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SearchImplCopyWithImpl<$Res>
-    extends _$CatalogStateCopyWithImpl<$Res, _$SearchImpl>
-    implements _$$SearchImplCopyWith<$Res> {
-  __$$SearchImplCopyWithImpl(
-      _$SearchImpl _value, $Res Function(_$SearchImpl) _then)
+class __$$CalculatorImplCopyWithImpl<$Res>
+    extends _$CalculatorStateCopyWithImpl<$Res, _$CalculatorImpl>
+    implements _$$CalculatorImplCopyWith<$Res> {
+  __$$CalculatorImplCopyWithImpl(
+      _$CalculatorImpl _value, $Res Function(_$CalculatorImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? catalog = null,
-    Object? index = null,
-    Object? searchData = null,
-  }) {
-    return _then(_$SearchImpl(
-      catalog: null == catalog
-          ? _value.catalog
-          : catalog // ignore: cast_nullable_to_non_nullable
-              as CatalogEntity,
-      index: null == index
-          ? _value.index
-          : index // ignore: cast_nullable_to_non_nullable
-              as int,
-      searchData: null == searchData
-          ? _value.searchData
-          : searchData // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$SearchImpl implements Search {
-  const _$SearchImpl(
-      {required this.catalog, required this.index, required this.searchData});
-
-  @override
-  final CatalogEntity catalog;
-  @override
-  final int index;
-  @override
-  final String searchData;
+class _$CalculatorImpl implements Calculator {
+  const _$CalculatorImpl();
 
   @override
   String toString() {
-    return 'CatalogState.search(catalog: $catalog, index: $index, searchData: $searchData)';
+    return 'CalculatorState.calculator()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SearchImpl &&
-            (identical(other.catalog, catalog) || other.catalog == catalog) &&
-            (identical(other.index, index) || other.index == index) &&
-            (identical(other.searchData, searchData) ||
-                other.searchData == searchData));
+        (other.runtimeType == runtimeType && other is _$CalculatorImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, catalog, index, searchData);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
-      __$$SearchImplCopyWithImpl<_$SearchImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
+    required TResult Function() catalog,
+    required TResult Function() calculator,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
-    return search(this.catalog, index, searchData);
+    return calculator();
   }
 
   @override
@@ -633,13 +529,12 @@ class _$SearchImpl implements Search {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult? Function()? catalog,
+    TResult? Function()? calculator,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
-    return search?.call(this.catalog, index, searchData);
+    return calculator?.call();
   }
 
   @override
@@ -647,15 +542,14 @@ class _$SearchImpl implements Search {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult Function()? catalog,
+    TResult Function()? calculator,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
-    if (search != null) {
-      return search(this.catalog, index, searchData);
+    if (calculator != null) {
+      return calculator();
     }
     return orElse();
   }
@@ -666,11 +560,11 @@ class _$SearchImpl implements Search {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
+    required TResult Function(Calculator value) calculator,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
-    return search(this);
+    return calculator(this);
   }
 
   @override
@@ -679,11 +573,11 @@ class _$SearchImpl implements Search {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
+    TResult? Function(Calculator value)? calculator,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
-    return search?.call(this);
+    return calculator?.call(this);
   }
 
   @override
@@ -692,30 +586,20 @@ class _$SearchImpl implements Search {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
+    TResult Function(Calculator value)? calculator,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
-    if (search != null) {
-      return search(this);
+    if (calculator != null) {
+      return calculator(this);
     }
     return orElse();
   }
 }
 
-abstract class Search implements CatalogState {
-  const factory Search(
-      {required final CatalogEntity catalog,
-      required final int index,
-      required final String searchData}) = _$SearchImpl;
-
-  CatalogEntity get catalog;
-  int get index;
-  String get searchData;
-  @JsonKey(ignore: true)
-  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class Calculator implements CalculatorState {
+  const factory Calculator() = _$CalculatorImpl;
 }
 
 /// @nodoc
@@ -727,7 +611,7 @@ abstract class _$$EmptyImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$EmptyImplCopyWithImpl<$Res>
-    extends _$CatalogStateCopyWithImpl<$Res, _$EmptyImpl>
+    extends _$CalculatorStateCopyWithImpl<$Res, _$EmptyImpl>
     implements _$$EmptyImplCopyWith<$Res> {
   __$$EmptyImplCopyWithImpl(
       _$EmptyImpl _value, $Res Function(_$EmptyImpl) _then)
@@ -741,7 +625,7 @@ class _$EmptyImpl implements Empty {
 
   @override
   String toString() {
-    return 'CatalogState.empty()';
+    return 'CalculatorState.empty()';
   }
 
   @override
@@ -758,10 +642,8 @@ class _$EmptyImpl implements Empty {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
+    required TResult Function() catalog,
+    required TResult Function() calculator,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -773,9 +655,8 @@ class _$EmptyImpl implements Empty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult? Function()? catalog,
+    TResult? Function()? calculator,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -787,9 +668,8 @@ class _$EmptyImpl implements Empty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult Function()? catalog,
+    TResult Function()? calculator,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -806,7 +686,7 @@ class _$EmptyImpl implements Empty {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
+    required TResult Function(Calculator value) calculator,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -819,7 +699,7 @@ class _$EmptyImpl implements Empty {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
+    TResult? Function(Calculator value)? calculator,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -832,7 +712,7 @@ class _$EmptyImpl implements Empty {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
+    TResult Function(Calculator value)? calculator,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -844,7 +724,7 @@ class _$EmptyImpl implements Empty {
   }
 }
 
-abstract class Empty implements CatalogState {
+abstract class Empty implements CalculatorState {
   const factory Empty() = _$EmptyImpl;
 }
 
@@ -859,7 +739,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$CatalogStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$CalculatorStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -889,7 +769,7 @@ class _$ErrorImpl implements Error {
 
   @override
   String toString() {
-    return 'CatalogState.error(failure: $failure)';
+    return 'CalculatorState.error(failure: $failure)';
   }
 
   @override
@@ -914,10 +794,8 @@ class _$ErrorImpl implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(CatalogEntity catalog, int index) catalog,
-    required TResult Function(
-            CatalogEntity catalog, int index, String searchData)
-        search,
+    required TResult Function() catalog,
+    required TResult Function() calculator,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -929,9 +807,8 @@ class _$ErrorImpl implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(CatalogEntity catalog, int index)? catalog,
-    TResult? Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult? Function()? catalog,
+    TResult? Function()? calculator,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -943,9 +820,8 @@ class _$ErrorImpl implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(CatalogEntity catalog, int index)? catalog,
-    TResult Function(CatalogEntity catalog, int index, String searchData)?
-        search,
+    TResult Function()? catalog,
+    TResult Function()? calculator,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -962,7 +838,7 @@ class _$ErrorImpl implements Error {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Catalog value) catalog,
-    required TResult Function(Search value) search,
+    required TResult Function(Calculator value) calculator,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -975,7 +851,7 @@ class _$ErrorImpl implements Error {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Catalog value)? catalog,
-    TResult? Function(Search value)? search,
+    TResult? Function(Calculator value)? calculator,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -988,7 +864,7 @@ class _$ErrorImpl implements Error {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Catalog value)? catalog,
-    TResult Function(Search value)? search,
+    TResult Function(Calculator value)? calculator,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -1000,7 +876,7 @@ class _$ErrorImpl implements Error {
   }
 }
 
-abstract class Error implements CatalogState {
+abstract class Error implements CalculatorState {
   const factory Error(final Failure failure) = _$ErrorImpl;
 
   Failure get failure;

@@ -7,8 +7,8 @@ part of 'catalog_model.dart';
 // **************************************************************************
 
 CatalogModel _$CatalogModelFromJson(Map<String, dynamic> json) => CatalogModel(
-      id: json['id'] as int?,
-      parentId: json['parentId'] as int?,
+      id: (json['id'] as num?)?.toInt(),
+      parentId: (json['parentId'] as num?)?.toInt(),
       name: json['name'] as String?,
       photo: json['photo'] as String?,
       info: json['info'] as String?,

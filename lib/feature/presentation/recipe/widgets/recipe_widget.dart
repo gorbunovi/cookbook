@@ -1,7 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cookbook/feature/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../../domain/entities/recipe_entity.dart';
 import 'instruckshion_tabbar_widget.dart';
 import 'package:cookbook/core/core.dart' as core;
@@ -455,6 +458,13 @@ class RecipeWidget extends StatelessWidget {
                       onPressed: () => showDialog(context: context,
                           builder: (_)=> AlertDialog(content: Text('${recipe.info}'),),
                       ),
+                    ),
+                    IconButton(
+                      icon: Image.asset('assets/images/icons/calculator.png'),
+                      onPressed: () => Get.toNamed(Routes.CALCULATOR),
+                      //     showDialog(context: context,
+                      //     builder: (_)=> AlertDialog(content: Text('Калькулятор пересчета ингридиентов'),),
+                      // ),
                     ),
                   ],
                 ),
