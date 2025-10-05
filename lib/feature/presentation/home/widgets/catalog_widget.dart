@@ -2,8 +2,10 @@ import 'package:cookbook/core/core.dart';
 import 'package:cookbook/feature/domain/entities/catalog_entity.dart';
 import 'package:cookbook/feature/presentation/home/widgets/card_catalog_widget.dart';
 import 'package:cookbook/feature/presentation/home/widgets/card_recipe_widget.dart';
+import 'package:cookbook/feature/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class CatalogWidget extends StatelessWidget {
   CatalogWidget({
@@ -222,6 +224,13 @@ class CatalogWidget extends StatelessWidget {
                   IconButton(
                     icon: const Icon(Icons.home, size: 35, color: Color(0xff322316),),
                     onPressed: () => reset(),
+                  ),
+                  IconButton(
+                    icon: Image.asset('assets/images/icons/calculator.png'),
+                    onPressed: () => Get.toNamed(Routes.CALCULATOR),
+                    //     showDialog(context: context,
+                    //     builder: (_)=> AlertDialog(content: Text('Калькулятор пересчета ингридиентов'),),
+                    // ),
                   ),
                   // IconButton(
                   //   icon: SvgPicture.asset('assets/images/icons/help.svg', height: 30),
