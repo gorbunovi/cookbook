@@ -226,7 +226,7 @@ class CatalogWidget extends StatelessWidget {
                     onPressed: () => reset(),
                   ),
                   IconButton(
-                    icon: Image.asset('assets/images/icons/calculator.png'),
+                    icon: Image.asset('assets/images/icons/arif.png', width: 80),
                     onPressed: () => Get.toNamed(Routes.CALCULATOR),
                     //     showDialog(context: context,
                     //     builder: (_)=> AlertDialog(content: Text('Калькулятор пересчета ингридиентов'),),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cookbook/core/core.dart' as core;
 
 Widget InsruckshionTabbarWidget(
-    {required BuildContext context, RecipeEntity? recipe}) {
+    {required BuildContext context, RecipeEntity? recipe, required String title}) {
   return Container(
     height: MediaQuery.of(context).size.height * 0.5,
     decoration: const BoxDecoration(
@@ -23,7 +23,7 @@ Widget InsruckshionTabbarWidget(
             child: SizedBox(
               height: 20,
               child: Text(
-                'ПРИГОТОВЛЕНИЕ',
+                title,
                 style: core.TextStyles.textBrow16,
               ),
             ),

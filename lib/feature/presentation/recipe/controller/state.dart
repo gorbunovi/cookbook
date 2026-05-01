@@ -11,7 +11,7 @@ abstract class RecipeState with _$RecipeState {
 
   const factory RecipeState.loading() = Loading;
 
-  const factory RecipeState.recipe({required RecipeEntity recipe,}) = Recipe;
+  const factory RecipeState.recipe({required RecipeEntity recipe, required bool isWakelock}) = Recipe;
 
 
   const factory RecipeState.empty() = Empty;

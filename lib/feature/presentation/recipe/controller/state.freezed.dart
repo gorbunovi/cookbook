@@ -20,7 +20,7 @@ mixin _$RecipeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(RecipeEntity recipe) recipe,
+    required TResult Function(RecipeEntity recipe, bool isWakelock) recipe,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) =>
@@ -29,7 +29,7 @@ mixin _$RecipeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(RecipeEntity recipe)? recipe,
+    TResult? Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) =>
@@ -38,7 +38,7 @@ mixin _$RecipeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(RecipeEntity recipe)? recipe,
+    TResult Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -132,7 +132,7 @@ class _$InitialImpl implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(RecipeEntity recipe) recipe,
+    required TResult Function(RecipeEntity recipe, bool isWakelock) recipe,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -144,7 +144,7 @@ class _$InitialImpl implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(RecipeEntity recipe)? recipe,
+    TResult? Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -156,7 +156,7 @@ class _$InitialImpl implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(RecipeEntity recipe)? recipe,
+    TResult Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -252,7 +252,7 @@ class _$LoadingImpl implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(RecipeEntity recipe) recipe,
+    required TResult Function(RecipeEntity recipe, bool isWakelock) recipe,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -264,7 +264,7 @@ class _$LoadingImpl implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(RecipeEntity recipe)? recipe,
+    TResult? Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -276,7 +276,7 @@ class _$LoadingImpl implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(RecipeEntity recipe)? recipe,
+    TResult Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -338,7 +338,7 @@ abstract class _$$RecipeImplCopyWith<$Res> {
           _$RecipeImpl value, $Res Function(_$RecipeImpl) then) =
       __$$RecipeImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({RecipeEntity recipe});
+  $Res call({RecipeEntity recipe, bool isWakelock});
 }
 
 /// @nodoc
@@ -353,12 +353,17 @@ class __$$RecipeImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? recipe = null,
+    Object? isWakelock = null,
   }) {
     return _then(_$RecipeImpl(
       recipe: null == recipe
           ? _value.recipe
           : recipe // ignore: cast_nullable_to_non_nullable
               as RecipeEntity,
+      isWakelock: null == isWakelock
+          ? _value.isWakelock
+          : isWakelock // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -366,14 +371,16 @@ class __$$RecipeImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$RecipeImpl implements Recipe {
-  const _$RecipeImpl({required this.recipe});
+  const _$RecipeImpl({required this.recipe, required this.isWakelock});
 
   @override
   final RecipeEntity recipe;
+  @override
+  final bool isWakelock;
 
   @override
   String toString() {
-    return 'RecipeState.recipe(recipe: $recipe)';
+    return 'RecipeState.recipe(recipe: $recipe, isWakelock: $isWakelock)';
   }
 
   @override
@@ -381,11 +388,13 @@ class _$RecipeImpl implements Recipe {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RecipeImpl &&
-            (identical(other.recipe, recipe) || other.recipe == recipe));
+            (identical(other.recipe, recipe) || other.recipe == recipe) &&
+            (identical(other.isWakelock, isWakelock) ||
+                other.isWakelock == isWakelock));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, recipe);
+  int get hashCode => Object.hash(runtimeType, recipe, isWakelock);
 
   @JsonKey(ignore: true)
   @override
@@ -398,11 +407,11 @@ class _$RecipeImpl implements Recipe {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(RecipeEntity recipe) recipe,
+    required TResult Function(RecipeEntity recipe, bool isWakelock) recipe,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
-    return recipe(this.recipe);
+    return recipe(this.recipe, isWakelock);
   }
 
   @override
@@ -410,11 +419,11 @@ class _$RecipeImpl implements Recipe {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(RecipeEntity recipe)? recipe,
+    TResult? Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
-    return recipe?.call(this.recipe);
+    return recipe?.call(this.recipe, isWakelock);
   }
 
   @override
@@ -422,13 +431,13 @@ class _$RecipeImpl implements Recipe {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(RecipeEntity recipe)? recipe,
+    TResult Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
     if (recipe != null) {
-      return recipe(this.recipe);
+      return recipe(this.recipe, isWakelock);
     }
     return orElse();
   }
@@ -475,9 +484,12 @@ class _$RecipeImpl implements Recipe {
 }
 
 abstract class Recipe implements RecipeState {
-  const factory Recipe({required final RecipeEntity recipe}) = _$RecipeImpl;
+  const factory Recipe(
+      {required final RecipeEntity recipe,
+      required final bool isWakelock}) = _$RecipeImpl;
 
   RecipeEntity get recipe;
+  bool get isWakelock;
   @JsonKey(ignore: true)
   _$$RecipeImplCopyWith<_$RecipeImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -523,7 +535,7 @@ class _$EmptyImpl implements Empty {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(RecipeEntity recipe) recipe,
+    required TResult Function(RecipeEntity recipe, bool isWakelock) recipe,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -535,7 +547,7 @@ class _$EmptyImpl implements Empty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(RecipeEntity recipe)? recipe,
+    TResult? Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -547,7 +559,7 @@ class _$EmptyImpl implements Empty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(RecipeEntity recipe)? recipe,
+    TResult Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -669,7 +681,7 @@ class _$ErrorImpl implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(RecipeEntity recipe) recipe,
+    required TResult Function(RecipeEntity recipe, bool isWakelock) recipe,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -681,7 +693,7 @@ class _$ErrorImpl implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(RecipeEntity recipe)? recipe,
+    TResult? Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -693,7 +705,7 @@ class _$ErrorImpl implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(RecipeEntity recipe)? recipe,
+    TResult Function(RecipeEntity recipe, bool isWakelock)? recipe,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),

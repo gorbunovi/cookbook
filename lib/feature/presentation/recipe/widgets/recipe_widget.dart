@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import '../../../domain/entities/recipe_entity.dart';
 import 'instruckshion_tabbar_widget.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 import 'package:cookbook/core/core.dart' as core;
 
 class RecipeWidget extends StatelessWidget {
@@ -20,6 +21,8 @@ class RecipeWidget extends StatelessWidget {
     required this.tapRecalculationNetto,
     required this.tapBottomNavigationBar,
     required this.recipe,
+    required this.wakelockClik,
+    required this.isWakelock,
   }) : super(key: key);
 
   final Function toCatalog;
@@ -30,10 +33,13 @@ class RecipeWidget extends StatelessWidget {
   final Function tapCatalog;
   final Function tapBottomNavigationBar;
   final RecipeEntity recipe;
+  final Function wakelockClik;
+  final isWakelock;
   int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    isWakelock ? WakelockPlus.enable() : WakelockPlus.disable();
     late bool isAutoPlay = true;
     if(recipe.photo != null){
       recipe.photo!.length > 1 ? isAutoPlay = true: isAutoPlay = false;
@@ -55,7 +61,7 @@ class RecipeWidget extends StatelessWidget {
 
     ];
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -86,6 +92,16 @@ class RecipeWidget extends StatelessWidget {
                 image: AssetImage('assets/images/background/bac_app_bar.png'),
                 fit: BoxFit.fill),
             backgroundColor: Colors.transparent,
+            actions: [
+              IconButton(
+                onPressed: (){
+                  wakelockClik(recipe);
+                },
+                icon: isWakelock ?
+                const Icon(Icons.visibility)
+                    : const Icon(Icons.visibility_off),
+              ),
+            ],
           ),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -138,6 +154,7 @@ class RecipeWidget extends StatelessWidget {
               const Expanded(
                 flex: 1,
                 child: TabBar(
+                  isScrollable: true,
                   indicatorSize: TabBarIndicatorSize.tab,
                   // unselectedLabelColor: Colors.cyan,
                   // isScrollable: true,
@@ -153,6 +170,9 @@ class RecipeWidget extends StatelessWidget {
                   tabs: [
                     Text(
                       'Ингридиенты',
+                    ),
+                    Text(
+                      'Оборудование',
                     ),
                     Text(
                       'Приготовление',
@@ -409,8 +429,11 @@ class RecipeWidget extends StatelessWidget {
                           ),
                         ),
                       ]),
+////////////////////Оборудование/////////////////////////////////////////////////
+                      InsruckshionTabbarWidget(context: context, recipe: recipe, title: 'ОБОРУДОВАНИЕ'),
+////////////////////Оборудование/////////////////////////////////////////////////
 //////////////////// Приготовление //////////////////////////////////////////////
-                      InsruckshionTabbarWidget(context: context, recipe: recipe),
+                      InsruckshionTabbarWidget(context: context, recipe: recipe, title: 'ПРИГОТОВЛЕНИЕ'),
 //////////////////// Приготовление //////////////////////////////////////////////
                     ],
                   ),
