@@ -1,17 +1,16 @@
 import 'package:equatable/equatable.dart';
 
-abstract class Failure extends Equatable{
-  const Failure(this.message);
+/// Базовый failure (используется в Either)
+abstract class Failure extends Equatable {
   final String message;
-  @override
-  String toString() {
-    return message;
-  }
-}
-  class CacheFailure extends Failure {
-  CacheFailure(super.message);
+
+  const Failure(this.message);
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [message];
 }
 
+/// Ошибка кеша
+class CacheFailure extends Failure {
+  const CacheFailure(String message) : super(message);
+}

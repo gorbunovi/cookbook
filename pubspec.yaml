@@ -1,5 +1,5 @@
 name: cookbook
-description: "A new Flutter project."
+description: Cookbook app
 
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -15,52 +15,80 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  # Логирование
+  logger: ^2.0.2+1
+  # Даты, форматирование, локализация (i18n foundation)
   intl: ^0.20.2
-  # Value equality
   equatable: ^2.0.5
-  # bloc state managment
-  flutter_bloc: ^8.1.1
-  # Local DATA
+  # DI, routing, state management
+  get: ^4.6.6
+  path: ^1.8.3
+  # БД
+  get_storage: ^2.1.1
+  sqflite: ^2.3.0
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  cached_network_image: ^3.2.3
-  # code generators
-  # freezed
-  freezed_annotation: ^2.2.0
-  # servise locator
-  get_it: ^7.2.0
-  # GetX
-  get: ^4.6.5
-  # images
-  flutter_svg: ^1.1.6
-  flutter_svg_provider: ^1.0.3
-  # images carousel slider
-  carousel_slider: ^5.1.1
+
+  dartz: ^0.10.1
   # network
-  http: ^0.13.5
+  dio: ^5.7.0
+
+  collection: ^1.19.0
+
+  flutter_svg: ^2.0.10
+  google_fonts: ^6.2.1
   internet_connection_checker: ^1.0.0+1
-  json_annotation: ^4.7.0
-  # sqflite
-  sqflite: ^2.2.8+4
-  path_provider: ^2.0.12
-  shared_preferences: ^2.1.2
-
-  wakelock_plus: ^1.2.5
-
-  cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  # Functional programming thingies
-  dartz: ^0.10.1
-  # Hive
-  hive_generator: ^2.0.0
-  # freezed
-  freezed: ^2.3.0
-  json_serializable: ^6.5.4
-  # code generators
-  build_runner: ^2.3.2
+  mocktail: ^1.0.4
+#  intl: ^0.20.2
+#  # Value equality
+#  equatable: ^2.0.5
+#  # bloc state managment
+#  flutter_bloc: ^8.1.1
+#  # Local DATA
+#  hive: ^2.2.3
+#  hive_flutter: ^1.1.0
+#  cached_network_image: ^3.2.3
+#  # code generators
+#  # freezed
+#  freezed_annotation: ^2.2.0
+#  # servise locator
+#  get_it: ^7.2.0
+#  # GetX
+#  get: ^4.6.5
+#  # images
+#  flutter_svg: ^1.1.6
+#  flutter_svg_provider: ^1.0.3
+#  # images carousel slider
+#  carousel_slider: ^5.1.1
+#  # network
+#  http: ^0.13.5
+#  internet_connection_checker: ^1.0.0+1
+#  json_annotation: ^4.7.0
+#  # sqflite
+#  sqflite: ^2.2.8+4
+#  path_provider: ^2.0.12
+#  shared_preferences: ^2.1.2
+#
+#  wakelock_plus: ^1.2.5
+#
+#  cupertino_icons: ^1.0.8
+#
+#dev_dependencies:
+#  flutter_test:
+#    sdk: flutter
+#  # Functional programming thingies
+#  dartz: ^0.10.1
+#  # Hive
+#  hive_generator: ^2.0.0
+#  # freezed
+#  freezed: ^2.3.0
+#  json_serializable: ^6.5.4
+#  # code generators
+#  build_runner: ^2.3.2
 
   flutter_lints: ^5.0.0
 
@@ -86,12 +114,22 @@ flutter:
   # https://flutter.dev/assets-and-images/#from-packages
 
 
-  fonts:
-    - family: Roboto
-      fonts:
-        - asset: assets/fonts/roboto/Roboto-Regular.ttf
-        - asset: assets/fonts/roboto/Roboto-Italic.ttf
-          style: italic
-        - asset: assets/fonts/roboto/Roboto-Bold.ttf
-          weight: 900
+fonts:
+  - family: Rustic
+    fonts:
+      # Основное начертание
+      - asset: assets/fonts/Rustic-Regular.ttf
+
+      # Жирное начертание (700 weight)
+      - asset: assets/fonts/Rustic-Bold.ttf
+        weight: 700
+
+#  fonts:
+#    - family: Roboto
+#      fonts:
+#        - asset: assets/fonts/roboto/Roboto-Regular.ttf
+#        - asset: assets/fonts/roboto/Roboto-Italic.ttf
+#          style: italic
+#        - asset: assets/fonts/roboto/Roboto-Bold.ttf
+#          weight: 900
 

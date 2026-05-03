@@ -1,23 +1,31 @@
-import 'dart:io';
+import 'package:cookbook/routes/app_pages.dart';
+import 'package:cookbook/routes/app_routes.dart';
 import 'package:flutter/material.dart';
-import 'feature/routes/app_pages.dart';
-import 'servise_locator.dart' as di;
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
-Future<void> main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await di.init();
-  HttpOverrides.global = MyHttpOverrides();
-  runApp(const MyApp());
+  await GetStorage.init();
+
+  runApp(const RusticRecipesApp());
 }
 
+class RusticRecipesApp extends StatelessWidget {
+  const RusticRecipesApp({super.key});
 
-
-
-// Функция автоматического обновление ssl сертификата
-class MyHttpOverrides extends HttpOverrides{
   @override
-  HttpClient createHttpClient(SecurityContext? context){
-    return super.createHttpClient(context)
-      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+
+      title: 'Rustic Recipes',
+
+      initialRoute: AppRoutes.catalog,
+      getPages: AppPages.pages,
+
+      /// ❌ ВРЕМЕННО УБРАТЬ ВСЁ DI
+      /// initialBinding: REMOVE
+    );
   }
 }
